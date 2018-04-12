@@ -6,6 +6,8 @@
   color: $sidebar-color;
   background: $sidebar-bg;
   @include borders($sidebar-borders);
+  box-shadow: 3px 0 16px rgba(0,0,0,.3);
+  background-color: #fff;
 
   .sidebar-close {
     position: absolute;
@@ -123,6 +125,7 @@
     @if $enable-sidebar-nav-rounded {
       border-radius: $border-radius;
     }
+    color:#000;
 
     i {
       display: inline-block;
@@ -136,12 +139,15 @@
     .badge {
       float: right;
       margin-top: 2px;
+      display: none;
     }
 
     &.active {
       color: $sidebar-nav-link-active-color;
       background: $sidebar-nav-link-active-bg;
       @include borders($sidebar-nav-link-active-borders);
+      background-color: #e61141;
+      color:#fff;
 
       i {
         color: $sidebar-nav-link-active-icon-color;
@@ -152,6 +158,8 @@
       color: $sidebar-nav-link-hover-color;
       background: $sidebar-nav-link-hover-bg;
       @include borders($sidebar-nav-link-hover-borders);
+      background-color: #e61141;
+      color:#fff;
 
       i {
         color: $sidebar-nav-link-hover-icon-color;
