@@ -49,11 +49,19 @@ magic-customers {
         input {
           flex: 0 0 100px;
           margin-right: 40px;
+          &.small {
+            flex: 0 0 50px;
+            width: 50px;
+          }
 
         }
         button {
           margin-right: 40px;
         }
+      }
+      .form-control {
+        width: auto;
+        margin-right: 40px;
       }
 
     }

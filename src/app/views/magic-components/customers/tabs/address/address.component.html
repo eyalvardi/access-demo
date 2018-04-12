@@ -4,7 +4,7 @@
       <div class="address-form">
         <div class="form-group">
           <label for="CustomerGroup">Customer Group</label>
-          <input type="text" class="form-control" id="street" placeholder="">
+          <input type="text" class="form-control small" id="street" placeholder="">
         </div>
         <div class="form-group">
           <label for="ActiveAddresses">Active Addresses for this Account</label>
@@ -49,19 +49,12 @@
     <div class="address-form">
       <div class="form-group">
         <label for="Status">Status</label>
-        <div class="btn-group">
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="false">Normal
-          </button>
-          <div class="dropdown-menu" x-placement="bottom-start"
-               style="position: absolute; transform: translate3d(0px, 35px, 0px); top: 0px; left: 0px; will-change: transform;">
-            <a class="dropdown-item" href="#">Normal</a>
-            <a class="dropdown-item" href="#">Normal</a>
-            <a class="dropdown-item" href="#">Normal</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Normal</a>
-          </div>
-        </div>
+        <select id="select1" name="select1" class="form-control">
+          <option value="0">Please select</option>
+          <option value="1">Option #1</option>
+          <option value="2">Option #2</option>
+          <option value="3">Option #3</option>
+        </select>
         <div class="form-check form-check-inline mr-1">
           <input class="form-check-input" type="checkbox" id="REDUNDANT" value="check1">
           <label class="form-check-label" for="REDUNDANT">REDUNDANT Customer ?</label>
@@ -79,7 +72,7 @@
         <label for="VarRegistration">Var Registration Number</label>
         <input type="text" class="form-control" id="VarRegistration" placeholder="">
         <label for="RegistrationCompany">Company Registration No</label>
-        <input type="text" class="form-control" id="VarRegistration" placeholder="">
+        <input type="text" class="form-control small" id="VarRegistration" placeholder="">
       </div>
       <div class="form-group">
         <label for="Analysis_01">Analysis Code 01</label>
