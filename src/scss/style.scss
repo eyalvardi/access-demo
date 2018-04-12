@@ -24,12 +24,17 @@
 magic-customers {
   display: flex;
   flex-direction: row;
+  form {
+    display: flex;
+  }
   .aside-search {
-    flex: 0 0 20%;
+    flex: 0 0 auto;
 
   }
-  .list-company {flex: 0 0 20%;}
-  .card {height:100vh;}
+  .list-company {flex: 0 0 auto;}
+  .tabs-company
+  {}
+
 }
 
 .box-size {min-width:0; padding: 0 15px; }

@@ -4,9 +4,7 @@
   "description": "access-demo",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build-lib": "ng-packagr -p angular/package.json && cpx angular/dist/magic-angular.tgz libs",
-    "i-mg-ng": "npm i ./libs/magic-angular.tgz"
+    "start": "ng serve"
   },
   "private": true,
   "dependencies": {
