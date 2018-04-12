@@ -31,7 +31,7 @@ magic-customers {
     flex: 0 0 auto;
   }
   .tabs-company {
-    .address-upper {
+    .address-form {
       display: flex;
       flex-direction: column;
       .form-group {
@@ -39,10 +39,19 @@ magic-customers {
         flex-wrap: wrap;
 
         label {
-          flex: 0 0 300px;
+          flex: 0 0 250px;
+        }
+        input[type=checkbox] {
+          flex: 0 0 auto;
+          margin-right: 10px;
         }
         input {
           flex: 0 0 100px;
+          margin-right: 40px;
+
+        }
+        button {
+          margin-right: 40px;
         }
       }
 
