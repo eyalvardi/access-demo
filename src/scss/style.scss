@@ -20,3 +20,16 @@
 
 // Custom styles
 @import "custom";
+
+magic-customers {
+  display: flex;
+  flex-direction: row;
+  .aside-search {
+    flex: 0 0 20%;
+
+  }
+  .list-company {flex: 0 0 20%;}
+  .card {height:100vh;}
+}
+
+.box-size {min-width:0; padding: 0 15px; }

@@ -1,0 +1,113 @@
+<form [formGroup]="screenFormGroup">
+  <div
+    magic="BrowseTablesCTLCustomer"
+    class="BrowseTablesCTLCustomerProps"
+  >
+    <div class="example-container mat-elevation-z8 Table1TableContainerProps">
+      <mat-table
+        #table
+        [dataSource]="dataSource"
+        class="Table1Props"
+        matSort
+        matSortDisableClear
+        (matSortChange)="sortData($event)"
+      >
+        <ng-container
+          magic="cGroupCode"
+          matColumnDef="cGroupCode"
+        >
+          <mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+          > cGroupCode
+          </mat-header-cell>
+          <mat-cell
+            *matCellDef="let row"
+            magicMark="magicTableRowContainer"
+          >
+            <label
+              magic="GroupCode"
+              [rowId]="row.rowId"
+              class="GroupCodeProps hidden_border"
+            >
+              {{mgGetValue('GroupCode', row.rowId) }}
+            </label>
+          </mat-cell>
+        </ng-container>
+        <ng-container
+          magic="cCompanyCode"
+          matColumnDef="cCompanyCode"
+        >
+          <mat-header-cell *matHeaderCellDef> cCompanyCode</mat-header-cell>
+          <mat-cell
+            *matCellDef="let row"
+            magicMark="magicTableRowContainer"
+          >
+            <label
+              magic="CompanyCode"
+              [rowId]="row.rowId"
+              class="CompanyCodeProps hidden_border"
+            >
+              {{mgGetValue('CompanyCode', row.rowId) }}
+            </label>
+          </mat-cell>
+        </ng-container>
+        <ng-container
+          magic="cDivisionCode"
+          matColumnDef="cDivisionCode"
+        >
+          <mat-header-cell *matHeaderCellDef> cDivisionCode</mat-header-cell>
+          <mat-cell
+            *matCellDef="let row"
+            magicMark="magicTableRowContainer"
+          >
+            <label
+              magic="DivisionCode"
+              [rowId]="row.rowId"
+              class="DivisionCodeProps hidden_border"
+            >
+              {{mgGetValue('DivisionCode', row.rowId) }}
+            </label>
+          </mat-cell>
+        </ng-container>
+        <ng-container
+          magic="cCustomerAccountCode"
+          matColumnDef="cCustomerAccountCode"
+        >
+          <mat-header-cell *matHeaderCellDef> cCustomerAccountCode</mat-header-cell>
+          <mat-cell
+            *matCellDef="let row"
+            magicMark="magicTableRowContainer"
+          >
+            <label
+              magic="CustomerAccountCode"
+              [rowId]="row.rowId"
+              class="CustomerAccountCodeProps hidden_border"
+            >
+              {{mgGetValue('CustomerAccountCode', row.rowId) }}
+            </label>
+          </mat-cell>
+        </ng-container>
+        <mat-header-row
+          *matHeaderRowDef="displayedColumns"
+          class="Table1_table_headerRowProps"
+        ></mat-header-row>
+        <mat-row
+          *matRowDef="let row; columns: displayedColumns;"
+          class="Table1_table_rowProps"
+          [ngClass]="{ 'selected': selection.isSelected(row)}"
+          magicMark="magicTableRowContainer"
+          (click)="selectRow(row.rowId)"
+        >
+        </mat-row>
+      </mat-table>
+      <mat-paginator
+        #paginator
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 20]"
+        (page)="pageEvent = $event; mgOnPaginateChange($event)"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</form>

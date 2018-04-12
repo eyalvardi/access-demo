@@ -1,0 +1,101 @@
+/*this is a component css*/
+
+.BrowseTablesCTLCustomerProps {
+    position: absolute;
+    height: 100vh;
+    width: 100vh;
+    background-repeat: repeat;
+}
+
+.Table1TableContainerProps {
+    position: absolute;
+    top: 13px;
+    left: 10px;
+    height: 296px;
+    width: 364px;
+    overflow-y: hidden;
+}
+
+.Table1Props {
+    overflow-y: scroll;
+    border: lightskyblue solid 1px;
+}
+
+.Table1_table_rowProps {
+    position: relative;
+    height: 21px;
+    flex-direction: row;
+    display: flex;
+    min-height: 0px;
+    padding-left: inherit;
+}
+
+.Table1_table_rowProps:hover {
+    background-color: #EEEEEE;
+}
+
+.Table1_table_headerRowProps {
+    min-height: 0px;
+    height: 20px;
+    padding-left: inherit;
+}
+
+.selected {
+    background: #F5F5F5;
+}
+
+.cGroupCodeProps {}
+
+.mat-column-cGroupCode {
+    flex: 0 0 73px;
+}
+
+.GroupCodeProps {
+    position: absolute;
+    top: 37px;
+    left: 15px;
+    height: 16px;
+    width: 64px;
+}
+
+.cCompanyCodeProps {}
+
+.mat-column-cCompanyCode {
+    flex: 0 0 88px;
+}
+
+.CompanyCodeProps {
+    position: absolute;
+    top: 37px;
+    left: 88px;
+    height: 16px;
+    width: 64px;
+}
+
+.cDivisionCodeProps {}
+
+.mat-column-cDivisionCode {
+    flex: 0 0 79px;
+}
+
+.DivisionCodeProps {
+    position: absolute;
+    top: 37px;
+    left: 175px;
+    height: 16px;
+    width: 64px;
+}
+
+.cCustomerAccountCodeProps {}
+
+.mat-column-cCustomerAccountCode {
+    flex: 0 0 120px;
+}
+
+.CustomerAccountCodeProps {
+    position: absolute;
+    top: 37px;
+    left: 254px;
+    height: 16px;
+    width: 53px;
+}

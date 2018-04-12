@@ -7,7 +7,8 @@ import {
   SimpleLayoutComponent
 } from './containers';
 import {LoginComponent} from './views/login/login.component';
-import {CustomersComponent} from './views/customers/customers.component';
+import {CustomersComponent} from './views/magic-components/customers/customers.component';
+import {MagicShellComponent} from "./views/magic-components/magic-shell/magic-shell.component";
 
 export const routes: Routes = [
   {
@@ -29,11 +30,11 @@ export const routes: Routes = [
         loadChildren: './views/dashboard/dashboard.module#DashboardModule'
       },
       { path: 'customers',
-        component: CustomersComponent,
+        component: MagicShellComponent,
         data: {
           title: 'Customers'
         }
-      },
+      }
     ]
   }
 ];

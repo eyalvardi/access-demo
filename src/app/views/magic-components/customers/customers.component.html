@@ -1,0 +1,153 @@
+<form [formGroup]="screenFormGroup">
+    <div class="aside-search box-size">
+
+      <div class="card">
+        <ul class="card-body">
+          <li>
+            <div class="form-group">
+              <label for="company">Customer Account</label>
+              <input type="text" class="form-control" placeholder="*">
+            </div>
+          </li>
+          <li>
+            <div class="form-group">
+              <label for="company">Customer Name</label>
+              <input type="text" class="form-control" placeholder="*">
+            </div>
+          </li>
+          <li>
+            <div class="form-group">
+              <label for="company">Address Code</label>
+              <input type="text" class="form-control" placeholder="*">
+            </div>
+          </li>
+          <li>
+            <div class="form-group">
+              <label for="company">Postcode</label>
+              <input type="text" class="form-control" placeholder="*">
+            </div>
+          </li>
+          <li>
+            <div class="form-group">
+              <label for="company">Customer Group</label>
+              <input type="text" class="form-control" placeholder="*">
+            </div>
+          </li>
+          <li>
+            <div class="form-group">
+              <label for="company">Country Code</label>
+              <input type="text" class="form-control" placeholder="*">
+            </div>
+          </li>
+          <li>
+            <div class="form-group">
+              <label for="company">Currency Code</label>
+              <input type="text" class="form-control" placeholder="*">
+            </div>
+          <li>
+            <div class="form-group">
+              <label for="company">Representative</label>
+              <input type="text" class="form-control" placeholder="*">
+            </div>
+          </li>
+          <li>
+            <div class="form-group">
+              <label for="company">Industry</label>
+              <input type="text" class="form-control" placeholder="*">
+            </div>
+          </li>
+          <li>
+            <div class="form-group">
+              <label for="company">Department Code</label>
+              <input type="text" class="form-control" placeholder="*">
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
+    </div>
+    <div class="list-company box-size">
+
+      <div class="card">
+        <div class="card-body">
+          <table class="table table-responsive-sm table-bordered table-striped table-sm">
+            <thead>
+            <tr>
+              <th>Name</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Vishnu Serghei</td>
+
+            </tr>
+            <tr>
+              <td>Zbyněk Phoibos</td>
+
+            </tr>
+            <tr>
+              <td>Einar Randall</td>
+            </tr>
+            <tr>
+              <td>Félix Troels</td>
+
+            </tr>
+            <tr>
+              <td>Aulus Agmundr</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="tabs-company box-size">
+      <div class="card">
+        <mat-tab-group class="card-body">
+          <mat-tab label="Address">
+            <app-address>
+              <div magic="MainCanvas">
+                <magic-customers-table
+                  *ngIf            ="parent.mgGetParameters('MainCanvas').myTaskId"
+                  [myTaskId]       ="parent.mgGetParameters('MainCanvas').myTaskId"
+                  [taskDescription]="parent.mgGetParameters('MainCanvas')?.taskDescription">
+                </magic-customers-table>
+              </div>
+            </app-address>
+          </mat-tab>
+          <mat-tab label="contacts">
+            <app-contacts></app-contacts>
+          </mat-tab>
+          <mat-tab label="tab1">
+            TDB
+          </mat-tab>
+          <mat-tab label="tab1">
+            TDB
+          </mat-tab>
+          <mat-tab label="tab1">
+            TDB
+          </mat-tab>
+          <mat-tab label="tab1">
+            TDB
+          </mat-tab>
+          <mat-tab label="tab1">
+            TDB
+          </mat-tab>
+          <mat-tab label="tab1">
+            TDB
+          </mat-tab>
+          <mat-tab label="tab1">
+            TDB
+          </mat-tab>
+          <mat-tab label="tab1">
+            TDB
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+
+    </div>
+  </form>
+

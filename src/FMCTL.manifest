@@ -1,0 +1,14 @@
+{
+  "components": [
+    {
+      "path": "Webtest/WebContainer/",
+      "name": "WebContainer",
+      "uniqueName": "WebContainer_WebContainer"
+    },
+    {
+      "path": "Webtest/WebTablesCTLCustomerAc/",
+      "name": "BrowseTablesCTLCustomer",
+      "uniqueName": "WebTablesCTLCustomerAc_BrowseTablesCTLCustomer"
+    }
+  ]
+}

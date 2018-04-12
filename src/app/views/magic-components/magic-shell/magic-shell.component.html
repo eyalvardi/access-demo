@@ -1,0 +1,13 @@
+<div style="border:2px solid red">
+  <mga-WebContainer
+    *ngIf="MainCompParameters"
+    [myTaskId]="MainCompParameters.myTaskId"
+    [taskDescription]="MainCompParameters.taskDescription">
+  </mga-WebContainer>
+
+  <app-magic-modal
+    *ngIf="ModalFormDefinition.comp !== null"
+    [ModalComp]="ModalFormDefinition.comp"
+    [ModalCompParameters]="ModalFormDefinition.parameters">
+  </app-magic-modal>
+</div>

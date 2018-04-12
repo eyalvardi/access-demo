@@ -65,22 +65,46 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { LoginComponent } from './views/login/login.component';
-import { CustomersComponent } from './views/customers/customers.component';
-import { AddressComponent } from './views/customers/tabs/address/address.component';
-import { ContactsComponent } from './views/customers/tabs/contacts/contacts.component';
+import { CustomersComponent } from './views/magic-components/customers/customers.component';
+import { AddressComponent } from './views/magic-components/customers/tabs/address/address.component';
+import { ContactsComponent } from './views/magic-components/customers/tabs/contacts/contacts.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule, MatInputModule, MatPaginatorModule, MatTooltipModule} from "@angular/material";
+import {MagicModule, ThemeModule} from "@magic/angular";
+import {CalendarModule} from "primeng/primeng";
+import {InfiniteScrollModule} from "ngx-infinite-scroll";
+import {DynamicModule} from "ng-dynamic-component";
+import {ReactiveFormsModule} from "@angular/forms";
+import { MagicShellComponent } from './views/magic-components/magic-shell/magic-shell.component';
+import {componentsList} from "./components-list";
+
+const magicComponents = componentsList.componentsArray ;//.getAllComponents();
 
 @NgModule({
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
 
     BrowserAnimationsModule,
     MatTabsModule,
     MatTableModule,
+    MatPaginatorModule,
+    MatDialogModule,
+    MatInputModule,
+    MatTooltipModule,
 
+    /* magic start */
+    MagicModule.forRoot(),
+    ThemeModule,
+    DynamicModule.withComponents(magicComponents),
+
+    CalendarModule,
+    InfiniteScrollModule,
+
+    /* magic end*/
 
     AppRoutingModule,
     BsDropdownModule.forRoot(),
@@ -88,6 +112,7 @@ import {MatTableModule} from '@angular/material/table';
     ChartsModule
   ],
   declarations: [
+    ...magicComponents,
     AppComponent,
     ...APP_CONTAINERS,
     ...APP_COMPONENTS,
@@ -95,7 +120,8 @@ import {MatTableModule} from '@angular/material/table';
     LoginComponent,
     CustomersComponent,
     AddressComponent,
-    ContactsComponent
+    ContactsComponent,
+    MagicShellComponent
   ],
   providers: [{
     provide: LocationStrategy,
