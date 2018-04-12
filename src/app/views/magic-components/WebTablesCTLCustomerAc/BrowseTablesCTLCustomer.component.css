@@ -1,5 +1,5 @@
 /*this is a component css*/
-
+/*
 .BrowseTablesCTLCustomerProps {
     position: absolute;
     height: 100vh;
@@ -98,4 +98,6 @@
     left: 254px;
     height: 16px;
     width: 53px;
-}
+}*/
+
+.BrowseTablesCTLCustomerProps {width:100%}

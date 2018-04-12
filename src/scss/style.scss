@@ -8,16 +8,12 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 // Override Boostrap variables
 @import "bootstrap-variables";
-
 // Import Bootstrap source files
 @import "node_modules/bootstrap/scss/bootstrap";
-
 // Override core variables
 @import "core-variables";
-
 // Import core styles
 @import "core/core";
-
 // Custom styles
 @import "custom";
 
@@ -31,10 +27,38 @@ magic-customers {
     flex: 0 0 auto;
 
   }
-  .list-company {flex: 0 0 auto;}
-  .tabs-company
-  {}
+  .list-company {
+    flex: 0 0 auto;
+  }
+  .tabs-company {
+    .address-upper {
+      display: flex;
+      flex-direction: column;
+      .form-group {
+        display: flex;
+        flex-wrap: wrap;
+
+        label {
+          flex: 0 0 300px;
+        }
+        input {
+          flex: 0 0 100px;
+        }
+      }
+
+    }
+    .mat-tab-labels {
+      flex-wrap: wrap
+    }
+    .mat-tab-body-wrapper {
+      height: 100vh
+    }
+  ;
+  }
 
 }
 
-.box-size {min-width:0; padding: 0 15px; }
+.box-size {
+  min-width: 0;
+  padding: 0 15px;
+}

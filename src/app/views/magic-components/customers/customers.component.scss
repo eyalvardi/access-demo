@@ -1,19 +1,10 @@
-app-magic-customers {
-  display: flex;
-  flex-direction: row;
-  .aside-search, .list-company, .tabs-company {
-    display: flex;
-  }
 
-
-
-}
 
 .aside-search {
   display: flex;
 
   ul {
-    margin:0;
+    margin: 0;
     display: flex;
     list-style: none;
     list-style-type: none;

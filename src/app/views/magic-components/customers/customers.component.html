@@ -106,7 +106,18 @@
     </div>
     <div class="tabs-company box-size">
       <div class="card">
-        <mat-tab-group class="card-body">
+        <div class="card-body">
+        <div class="address-upper">
+          <div class="form-group">
+            <label for="street">Customer Group</label>
+            <input type="text" class="form-control" id="street" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="street">Active Addresses for this Account</label>
+            <input type="text" class="form-control" id="street" placeholder="">
+          </div>
+        </div>
+        <mat-tab-group>
           <mat-tab label="Address">
             <app-address>
               <div magic="MainCanvas">
@@ -146,6 +157,7 @@
             TDB
           </mat-tab>
         </mat-tab-group>
+        </div>
       </div>
 
     </div>
