@@ -129,10 +129,14 @@
             <app-address>
               <div magic="MainCanvas">
                 <magic-customers-table
-                  *ngIf="parent.mgGetParameters('MainCanvas').myTaskId"
+                  *ngIf="parent.mgGetParameters('MainCanvas').myTaskId; else taskLoding"
                   [myTaskId]="parent.mgGetParameters('MainCanvas').myTaskId"
                   [taskDescription]="parent.mgGetParameters('MainCanvas')?.taskDescription">
                 </magic-customers-table>
+                <ng-template #taskLoding>
+                  <h4>magic-customers-table ...get parameters('MainCanvas')</h4>
+                  <pre> {{ parent.mgGetParameters('MainCanvas') | json }}</pre>
+                </ng-template>
               </div>
             </app-address>
           </mat-tab>

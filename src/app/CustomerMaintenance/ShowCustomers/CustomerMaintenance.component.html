@@ -1,0 +1,705 @@
+<form
+    novalidate
+    [formGroup]="screenFormGroup"
+>
+    <div
+        magic="CustomerMaintenance"
+        class="CustomerMaintenanceProps"
+    >
+        <div *ngIf="mgIsImageExists('iQBMin')">
+            <img
+                magic="iQBMin"
+                [style.visibility]="mgGetVisible('iQBMin')"
+                [title]="mgGetTitle('iQBMin')"
+                class="iQBMinProps"
+                [src]="mgGetImage('iQBMin')"
+            />
+        </div>
+        <div class="example-container mat-elevation-z8 tCustomersTableTableContainerProps">
+            <mat-table
+                #table
+                [dataSource]="dataSource"
+                class="tCustomersTableProps"
+                matSort
+                matSortDisableClear
+                (matSortChange)="sortData($event)"
+            >
+                <ng-container
+                    magic="Account Code"
+                    matColumnDef="Account Code"
+                >
+                    <mat-header-cell *matHeaderCellDef> Account Code </mat-header-cell>
+                    <mat-cell
+                        *matCellDef="let row"
+                        magicMark="magicTableRowContainer"
+                    >
+                        <label
+                            magic="eAccountCode"
+                            [rowId]="row.rowId"
+                            [title]="mgGetTitle('eAccountCode', row.rowId)"
+                            class="eAccountCodeProps mgFont1 mgColor142 hidden_border"
+                        >
+                            {{mgGetValue('eAccountCode', row.rowId) }}
+                            </label>
+                            </mat-cell>
+                            </ng-container>
+                            <ng-container
+                                magic="Customer Name"
+                                matColumnDef="Customer Name"
+                            >
+                                <mat-header-cell *matHeaderCellDef> Customer Name </mat-header-cell>
+                                <mat-cell
+                                    *matCellDef="let row"
+                                    magicMark="magicTableRowContainer"
+                                >
+                                    <label
+                                        magic="eCustomerName"
+                                        [rowId]="row.rowId"
+                                        [title]="mgGetTitle('eCustomerName', row.rowId)"
+                                        class="eCustomerNameProps mgColor142 hidden_border"
+                                    >
+                                        {{mgGetValue('eCustomerName', row.rowId) }}
+                                        </label>
+                                        </mat-cell>
+                                        </ng-container>
+                                        <ng-container
+                                            magic="TCP"
+                                            matColumnDef="TCP"
+                                        >
+                                            <mat-header-cell
+                                                *matHeaderCellDef
+                                                [style.visibility]="mgGetVisible('TCP')"
+                                            > TCP </mat-header-cell>
+                                                <mat-cell
+                                                    *matCellDef="let row"
+                                                    [style.visibility]="mgGetVisible('TCP')"
+                                                    magicMark="magicTableRowContainer"
+                                                >
+                                                    <label
+                                                        magic="eScore"
+                                                        [rowId]="row.rowId"
+                                                        [style.visibility]="mgGetVisible('eScore', row.rowId)"
+                                                        class="eScoreProps mgColor142 hidden_border"
+                                                    >
+                                                        {{mgGetValue('eScore', row.rowId) }}
+                                                        </label>
+                                                        </mat-cell>
+                                                        </ng-container>
+                                                        <mat-header-row
+                                                            *matHeaderRowDef="displayedColumns"
+                                                            class="tCustomersTable_table_headerRowProps"
+                                                        ></mat-header-row>
+                                                            <mat-row
+                                                                *matRowDef="let row; columns: displayedColumns;"
+                                                                class="tCustomersTable_table_rowProps"
+                                                                [ngClass]="{ 'selected': selection.isSelected(row)}"
+                                                                magicMark="magicTableRowContainer"
+                                                                (click)="selectRow(row.rowId)"
+                                                            >
+                                                                </mat-row>
+                                                                </mat-table>
+                                                                <mat-paginator
+                                                                    #paginator
+                                                                    [pageSize]="10"
+                                                                    [pageSizeOptions]="[5, 10, 20]"
+                                                                    (page)="pageEvent = $event; mgOnPaginateChange($event)"
+                                                                >
+                                                                    </mat-paginator>
+        </div>
+        <div
+            magic="tTab"
+            class="tTabProps mgFont151 multiline"
+        >
+            <div class="tab_control">
+                <button
+                    class="tab_button"
+                    (click)="mgOnTabSelectionChanged('tTab', '1')"
+                    [ngClass]="{'tab_button_active' : mgIsTabPageSelected('tTab', 1)}"
+                >
+                    {{mgGetTabpageText('tTab', '1')}}
+                    </button>
+                    <button
+                        class="tab_button"
+                        (click)="mgOnTabSelectionChanged('tTab', '2')"
+                        [ngClass]="{'tab_button_active' : mgIsTabPageSelected('tTab', 2)}"
+                    >
+                        {{mgGetTabpageText('tTab', '2')}}
+                        </button>
+                        <button
+                            class="tab_button"
+                            (click)="mgOnTabSelectionChanged('tTab', '3')"
+                            [ngClass]="{'tab_button_active' : mgIsTabPageSelected('tTab', 3)}"
+                        >
+                            {{mgGetTabpageText('tTab', '3')}}
+                            </button>
+                            <button
+                                class="tab_button"
+                                (click)="mgOnTabSelectionChanged('tTab', '4')"
+                                [ngClass]="{'tab_button_active' : mgIsTabPageSelected('tTab', 4)}"
+                            >
+                                {{mgGetTabpageText('tTab', '4')}}
+                                </button>
+                                <button
+                                    class="tab_button"
+                                    (click)="mgOnTabSelectionChanged('tTab', '5')"
+                                    [ngClass]="{'tab_button_active' : mgIsTabPageSelected('tTab', 5)}"
+                                >
+                                    {{mgGetTabpageText('tTab', '5')}}
+                                    </button>
+                                    <button
+                                        class="tab_button"
+                                        (click)="mgOnTabSelectionChanged('tTab', '6')"
+                                        [ngClass]="{'tab_button_active' : mgIsTabPageSelected('tTab', 6)}"
+                                    >
+                                        {{mgGetTabpageText('tTab', '6')}}
+                                        </button>
+                                        <button
+                                            class="tab_button"
+                                            (click)="mgOnTabSelectionChanged('tTab', '7')"
+                                            [ngClass]="{'tab_button_active' : mgIsTabPageSelected('tTab', 7)}"
+                                        >
+                                            {{mgGetTabpageText('tTab', '7')}}
+                                            </button>
+                                            <button
+                                                class="tab_button"
+                                                (click)="mgOnTabSelectionChanged('tTab', '8')"
+                                                [ngClass]="{'tab_button_active' : mgIsTabPageSelected('tTab', 8)}"
+                                            >
+                                                {{mgGetTabpageText('tTab', '8')}}
+                                                </button>
+                                                <button
+                                                    class="tab_button"
+                                                    (click)="mgOnTabSelectionChanged('tTab', '9')"
+                                                    [ngClass]="{'tab_button_active' : mgIsTabPageSelected('tTab', 9)}"
+                                                >
+                                                    {{mgGetTabpageText('tTab', '9')}}
+                                                    </button>
+                                                    <button
+                                                        class="tab_button"
+                                                        (click)="mgOnTabSelectionChanged('tTab', '10')"
+                                                        [ngClass]="{'tab_button_active' : mgIsTabPageSelected('tTab', 10)}"
+                                                    >
+                                                        {{mgGetTabpageText('tTab', '10')}}
+                                                        </button>
+                                                        <button
+                                                            class="tab_button"
+                                                            (click)="mgOnTabSelectionChanged('tTab', '11')"
+                                                            [ngClass]="{'tab_button_active' : mgIsTabPageSelected('tTab', 11)}"
+                                                        >
+                                                            {{mgGetTabpageText('tTab', '11')}}
+                                                            </button>
+                                                            <button
+                                                                class="tab_button"
+                                                                (click)="mgOnTabSelectionChanged('tTab', '12')"
+                                                                [ngClass]="{'tab_button_active' : mgIsTabPageSelected('tTab', 12)}"
+                                                            >
+                                                                {{mgGetTabpageText('tTab', '12')}}
+                                                                </button>
+                                                                <button
+                                                                    class="tab_button"
+                                                                    (click)="mgOnTabSelectionChanged('tTab', '13')"
+                                                                    [ngClass]="{'tab_button_active' : mgIsTabPageSelected('tTab', 13)}"
+                                                                >
+                                                                    {{mgGetTabpageText('tTab', '13')}}
+                                                                    </button>
+                                                                    <button
+                                                                        class="tab_button"
+                                                                        (click)="mgOnTabSelectionChanged('tTab', '14')"
+                                                                        [ngClass]="{'tab_button_active' : mgIsTabPageSelected('tTab', 14)}"
+                                                                    >
+                                                                        {{mgGetTabpageText('tTab', '14')}}
+                                                                        </button>
+                                                                        <button
+                                                                            class="tab_button"
+                                                                            (click)="mgOnTabSelectionChanged('tTab', '15')"
+                                                                            [ngClass]="{'tab_button_active' : mgIsTabPageSelected('tTab', 15)}"
+                                                                        >
+                                                                            {{mgGetTabpageText('tTab', '15')}}
+                                                                            </button>
+                                                                            <button
+                                                                                class="tab_button"
+                                                                                (click)="mgOnTabSelectionChanged('tTab', '16')"
+                                                                                [ngClass]="{'tab_button_active' : mgIsTabPageSelected('tTab', 16)}"
+                                                                            >
+                                                                                {{mgGetTabpageText('tTab', '16')}}
+                                                                                </button>
+                                                                                <button
+                                                                                    class="tab_button"
+                                                                                    (click)="mgOnTabSelectionChanged('tTab', '17')"
+                                                                                    [ngClass]="{'tab_button_active' : mgIsTabPageSelected('tTab', 17)}"
+                                                                                >
+                                                                                    {{mgGetTabpageText('tTab', '17')}}
+                                                                                    </button>
+                                                                                    <button
+                                                                                        class="tab_button"
+                                                                                        (click)="mgOnTabSelectionChanged('tTab', '18')"
+                                                                                        [ngClass]="{'tab_button_active' : mgIsTabPageSelected('tTab', 18)}"
+                                                                                    >
+                                                                                        {{mgGetTabpageText('tTab', '18')}}
+                                                                                        </button>
+                                                                                        <div
+                                                                                            class="tab_content"
+                                                                                            *ngIf="mgIsTabPageSelected('tTab', 1)"
+                                                                                        >
+                                                                                            <div
+                                                                                                magic="gAddress"
+                                                                                                class="gAddressProps mgColor111"
+                                                                                            >
+                                                                                                <label
+                                                                                                    magic="lCustomerGroup"
+                                                                                                    class="lCustomerGroupProps mgFont1 mgColor120"
+                                                                                                >
+                                                                                                    Customer Group: &gt;
+                                                                                                    </label>
+                                                                                                    <div>
+                                                                                                        <input
+                                                                                                            type="text"
+                                                                                                            formControlName="eCustomerGroup"
+                                                                                                            magic="eCustomerGroup"
+                                                                                                            [title]="mgGetTitle('eCustomerGroup')"
+                                                                                                            class="eCustomerGroupProps"
+                                                                                                            pattern="^.{0,4}$"
+                                                                                                            alphadirective
+                                                                                                        />
+                                                                                                        <div *ngIf="(screenFormGroup.get('eCustomerGroup').touched) && (
+                        screenFormGroup.get('eCustomerGroup').hasError('pattern')
+                        
+                        )">
+                                                                                                            <p>control status: {{ screenFormGroup.get('eCustomerGroup').errors | json }}</p>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <label
+                                                                                                        magic="lActiveAddresses"
+                                                                                                        class="lActiveAddressesProps mgFont1 mgColor120"
+                                                                                                    >
+                                                                                                        Active Addresses for this Account:
+                                                                                                        </label>
+                                                                                                        <label
+                                                                                                            magic="lStatus"
+                                                                                                            class="lStatusProps mgFont1 mgColor120"
+                                                                                                        >
+                                                                                                            Status:
+                                                                                                            </label>
+                                                                                                            <label
+                                                                                                                magic="lWebsiteAddress"
+                                                                                                                class="lWebsiteAddressProps mgFont1 mgColor120"
+                                                                                                            >
+                                                                                                                Website Address:
+                                                                                                                </label>
+                                                                                                                <div>
+                                                                                                                    <input
+                                                                                                                        type="text"
+                                                                                                                        formControlName="eQBCustomerName"
+                                                                                                                        magic="eQBCustomerName"
+                                                                                                                        class="eQBCustomerNameProps mgColor2"
+                                                                                                                        pattern="^.{0,200}$"
+                                                                                                                    />
+                                                                                                                    <div *ngIf="(screenFormGroup.get('eQBCustomerName').touched) && (
+                        screenFormGroup.get('eQBCustomerName').hasError('pattern')
+                        
+                        )">
+                                                                                                                        <p>control status: {{ screenFormGroup.get('eQBCustomerName').errors | json }}</p>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <label
+                                                                                                                    magic="lVatRegistrationNumber"
+                                                                                                                    class="lVatRegistrationNumberProps mgFont1 mgColor120"
+                                                                                                                >
+                                                                                                                    Vat Registration Number:
+                                                                                                                    </label>
+                                                                                                                    <div>
+                                                                                                                        <input
+                                                                                                                            type="text"
+                                                                                                                            formControlName="eVatRegNo"
+                                                                                                                            magic="eVatRegNo"
+                                                                                                                            class="eVatRegNoProps mgColor2"
+                                                                                                                            pattern="^.{0,20}$"
+                                                                                                                            alphadirective
+                                                                                                                        />
+                                                                                                                        <div *ngIf="(screenFormGroup.get('eVatRegNo').touched) && (
+                        screenFormGroup.get('eVatRegNo').hasError('pattern')
+                        
+                        )">
+                                                                                                                            <p>control status: {{ screenFormGroup.get('eVatRegNo').errors | json }}</p>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                    <label
+                                                                                                                        magic="lCompanyRegistrationNo"
+                                                                                                                        class="lCompanyRegistrationNoProps mgFont1 mgColor120"
+                                                                                                                    >
+                                                                                                                        Company Registration No:
+                                                                                                                        </label>
+                                                                                                                        <div>
+                                                                                                                            <input
+                                                                                                                                type="text"
+                                                                                                                                formControlName="eCompanyRegNo0001"
+                                                                                                                                magic="eCompanyRegNo0001"
+                                                                                                                                class="eCompanyRegNo0001Props mgColor2"
+                                                                                                                                pattern="^.{0,50}$"
+                                                                                                                                alphadirective
+                                                                                                                            />
+                                                                                                                            <div *ngIf="(screenFormGroup.get('eCompanyRegNo0001').touched) && (
+                        screenFormGroup.get('eCompanyRegNo0001').hasError('pattern')
+                        
+                        )">
+                                                                                                                                <p>control status: {{ screenFormGroup.get('eCompanyRegNo0001').errors | json }}</p>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div>
+                                                                                                                            <input
+                                                                                                                                type="text"
+                                                                                                                                formControlName="elDesc3"
+                                                                                                                                magic="elDesc3"
+                                                                                                                                class="elDesc3Props mgColor120 hidden_border"
+                                                                                                                            />
+                                                                                                                            <div *ngIf="(screenFormGroup.get('elDesc3').touched) && (
+                        screenFormGroup.get('elDesc3').hasError('pattern')
+                        
+                        )">
+                                                                                                                                <p>control status: {{ screenFormGroup.get('elDesc3').errors | json }}</p>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div>
+                                                                                                                            <input
+                                                                                                                                type="text"
+                                                                                                                                formControlName="eUserCode1"
+                                                                                                                                magic="eUserCode1"
+                                                                                                                                [title]="mgGetTitle('eUserCode1')"
+                                                                                                                                class="eUserCode1Props mgColor2"
+                                                                                                                                pattern="^.{0,8}$"
+                                                                                                                                alphadirective
+                                                                                                                            />
+                                                                                                                            <div *ngIf="(screenFormGroup.get('eUserCode1').touched) && (
+                        screenFormGroup.get('eUserCode1').hasError('pattern')
+                        
+                        )">
+                                                                                                                                <p>control status: {{ screenFormGroup.get('eUserCode1').errors | json }}</p>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <label
+                                                                                                                            magic="lNotes"
+                                                                                                                            class="lNotesProps mgFont1 mgColor120"
+                                                                                                                        >
+                                                                                                                            Notes: &gt;
+                                                                                                                            </label>
+                                                                                                                            <div>
+                                                                                                                                <textarea
+                                                                                                                                    type="text"
+                                                                                                                                    formControlName="eAccountNotes"
+                                                                                                                                    magic="eAccountNotes"
+                                                                                                                                    class="eAccountNotesProps mgColor2 multiline"
+                                                                                                                                    pattern="^.{0,4000}$"
+                                                                                                                                >
+                                                                                                                                    </textarea>
+                                                                                                                                    <div *ngIf="(screenFormGroup.get('eAccountNotes').touched) && (
+                        screenFormGroup.get('eAccountNotes').hasError('pattern')
+                        
+                        )">
+                                                                                                                                        <p>control status: {{ screenFormGroup.get('eAccountNotes').errors | json }}</p>
+                                                                                                                                    </div>
+                                                                                                                            </div>
+                                                                                                                            <div>
+                                                                                                                                <input
+                                                                                                                                    type="text"
+                                                                                                                                    formControlName="elDesc2"
+                                                                                                                                    magic="elDesc2"
+                                                                                                                                    class="elDesc2Props mgColor120 hidden_border"
+                                                                                                                                />
+                                                                                                                                <div *ngIf="(screenFormGroup.get('elDesc2').touched) && (
+                        screenFormGroup.get('elDesc2').hasError('pattern')
+                        
+                        )">
+                                                                                                                                    <p>control status: {{ screenFormGroup.get('elDesc2').errors | json }}</p>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                            <div>
+                                                                                                                                <input
+                                                                                                                                    type="text"
+                                                                                                                                    formControlName="eUserCode2"
+                                                                                                                                    magic="eUserCode2"
+                                                                                                                                    [title]="mgGetTitle('eUserCode2')"
+                                                                                                                                    class="eUserCode2Props mgColor2"
+                                                                                                                                    pattern="^.{0,8}$"
+                                                                                                                                    alphadirective
+                                                                                                                                />
+                                                                                                                                <div *ngIf="(screenFormGroup.get('eUserCode2').touched) && (
+                        screenFormGroup.get('eUserCode2').hasError('pattern')
+                        
+                        )">
+                                                                                                                                    <p>control status: {{ screenFormGroup.get('eUserCode2').errors | json }}</p>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                            <div>
+                                                                                                                                <input
+                                                                                                                                    type="text"
+                                                                                                                                    formControlName="elDesc1"
+                                                                                                                                    magic="elDesc1"
+                                                                                                                                    class="elDesc1Props mgColor120 hidden_border"
+                                                                                                                                />
+                                                                                                                                <div *ngIf="(screenFormGroup.get('elDesc1').touched) && (
+                        screenFormGroup.get('elDesc1').hasError('pattern')
+                        
+                        )">
+                                                                                                                                    <p>control status: {{ screenFormGroup.get('elDesc1').errors | json }}</p>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                            <div>
+                                                                                                                                <input
+                                                                                                                                    type="text"
+                                                                                                                                    formControlName="eUserCode3"
+                                                                                                                                    magic="eUserCode3"
+                                                                                                                                    [title]="mgGetTitle('eUserCode3')"
+                                                                                                                                    class="eUserCode3Props mgColor2"
+                                                                                                                                    pattern="^.{0,8}$"
+                                                                                                                                    alphadirective
+                                                                                                                                />
+                                                                                                                                <div *ngIf="(screenFormGroup.get('eUserCode3').touched) && (
+                        screenFormGroup.get('eUserCode3').hasError('pattern')
+                        
+                        )">
+                                                                                                                                    <p>control status: {{ screenFormGroup.get('eUserCode3').errors | json }}</p>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                            <button
+                                                                                                                                magic="bEditAddresses"
+                                                                                                                                class="bEditAddressesProps mgFont1"
+                                                                                                                            >
+                                                                                                                                Edit Addresses
+                                                                                                                                </button>
+                                                                                                                                <div class="sfAddressesProps">
+                                                                                                                                    <m-subform
+                                                                                                                                        magic="sfAddresses"
+                                                                                                                                        [style.visibility]="mgGetVisible('sfAddresses')"
+                                                                                                                                        class="sfAddressesProps"
+                                                                                                                                    >
+                                                                                                                                        </m-subform>
+                                                                                                                                </div>
+                                                                                                                                <div>
+                                                                                                                                    <select
+                                                                                                                                        (change)="mgOnSelectionChanged($event,'cbCustomerStatus')"
+                                                                                                                                        value="mgGetSelectedValue('cbCustomerStatus')"
+                                                                                                                                        magic="cbCustomerStatus"
+                                                                                                                                        [title]="mgGetTitle('cbCustomerStatus')"
+                                                                                                                                        class="cbCustomerStatusProps"
+                                                                                                                                        formControlName="cbCustomerStatus"
+                                                                                                                                    >
+                                                                                                                                        <option
+                                                                                                                                            *ngFor="let o of mgGetItemListValues('cbCustomerStatus');"
+                                                                                                                                            [selected]="o.index == mgGetSelectedValue('cbCustomerStatus')"
+                                                                                                                                            [value]="o.index"
+                                                                                                                                        >
+                                                                                                                                            {{o.realString}}
+                                                                                                                                            </option>
+                                                                                                                                            </select>
+                                                                                                                                </div>
+                                                                                                                                <a
+                                                                                                                                    href="#"
+                                                                                                                                    magic="bOnHoldReason"
+                                                                                                                                    [style.visibility]="mgGetVisible('bOnHoldReason')"
+                                                                                                                                    class="bOnHoldReasonProps mgFont1 mgColor142"
+                                                                                                                                >
+                                                                                                                                    {{mgGetValue('bOnHoldReason')}}
+                                                                                                                                    </a>
+                                                                                                                                    <div>
+                                                                                                                                        <div
+                                                                                                                                            magic="cbREDUNDANTCustomer"
+                                                                                                                                            class="cbREDUNDANTCustomerProps mgColor142"
+                                                                                                                                        >
+                                                                                                                                            <input
+                                                                                                                                                type="checkbox"
+                                                                                                                                                id="cbREDUNDANTCustomer"
+                                                                                                                                                formControlName="cbREDUNDANTCustomer"
+                                                                                                                                                (change)="mgOnCheckChanged($event,'cbREDUNDANTCustomer')"
+                                                                                                                                            />
+                                                                                                                                            <label for="cbREDUNDANTCustomer">
+        
+        
+        REDUNDANT Customer?
+        
+        
+    </label>
+                                                                                                                                    </div>
+            </div>
+            <button
+                magic="bGo"
+                class="bGoProps mgFont1 mgColor120"
+                [attr.disabled]="mgIsDisabled('bGo')"
+            >
+                Go
+                </button>
+                </div>
+                </div>
+                <div
+                    class="tab_content"
+                    *ngIf="mgIsTabPageSelected('tTab', 2)"
+                >
+                    </div>
+                    <div
+                        class="tab_content"
+                        *ngIf="mgIsTabPageSelected('tTab', 3)"
+                    >
+                        </div>
+                        <div
+                            class="tab_content"
+                            *ngIf="mgIsTabPageSelected('tTab', 4)"
+                        >
+                            </div>
+                            <div
+                                class="tab_content"
+                                *ngIf="mgIsTabPageSelected('tTab', 5)"
+                            >
+                                </div>
+                                <div
+                                    class="tab_content"
+                                    *ngIf="mgIsTabPageSelected('tTab', 6)"
+                                >
+                                    </div>
+                                    <div
+                                        class="tab_content"
+                                        *ngIf="mgIsTabPageSelected('tTab', 7)"
+                                    >
+                                        </div>
+                                        <div
+                                            class="tab_content"
+                                            *ngIf="mgIsTabPageSelected('tTab', 8)"
+                                        >
+                                            </div>
+                                            <div
+                                                class="tab_content"
+                                                *ngIf="mgIsTabPageSelected('tTab', 9)"
+                                            >
+                                                </div>
+                                                <div
+                                                    class="tab_content"
+                                                    *ngIf="mgIsTabPageSelected('tTab', 10)"
+                                                >
+                                                    </div>
+                                                    <div
+                                                        class="tab_content"
+                                                        *ngIf="mgIsTabPageSelected('tTab', 11)"
+                                                    >
+                                                        </div>
+                                                        <div
+                                                            class="tab_content"
+                                                            *ngIf="mgIsTabPageSelected('tTab', 12)"
+                                                        >
+                                                            </div>
+                                                            <div
+                                                                class="tab_content"
+                                                                *ngIf="mgIsTabPageSelected('tTab', 13)"
+                                                            >
+                                                                </div>
+                                                                <div
+                                                                    class="tab_content"
+                                                                    *ngIf="mgIsTabPageSelected('tTab', 14)"
+                                                                >
+                                                                    </div>
+                                                                    <div
+                                                                        class="tab_content"
+                                                                        *ngIf="mgIsTabPageSelected('tTab', 15)"
+                                                                    >
+                                                                        </div>
+                                                                        <div
+                                                                            class="tab_content"
+                                                                            *ngIf="mgIsTabPageSelected('tTab', 16)"
+                                                                        >
+                                                                            </div>
+                                                                            <div
+                                                                                class="tab_content"
+                                                                                *ngIf="mgIsTabPageSelected('tTab', 17)"
+                                                                            >
+                                                                                </div>
+                                                                                <div
+                                                                                    class="tab_content"
+                                                                                    *ngIf="mgIsTabPageSelected('tTab', 18)"
+                                                                                >
+                                                                                    </div>
+                                                                                    </div>
+                                                                                    </div>
+                                                                                    <div class="[SUBFORM] -  Info Bar H=3.313Props">
+                                                                                        <m-subform
+                                                                                            magic="[SUBFORM] -  Info Bar H=3.313"
+                                                                                            class="[SUBFORM] -  Info Bar H=3.313Props"
+                                                                                        >
+                                                                                            </m-subform>
+                                                                                    </div>
+                                                                                    <button
+                                                                                        magic="bReports"
+                                                                                        class="bReportsProps mgFont1"
+                                                                                        [attr.disabled]="mgIsDisabled('bReports')"
+                                                                                    >
+                                                                                        Reports
+                                                                                        </button>
+                                                                                        <button
+                                                                                            magic="bSyncWithSAGE"
+                                                                                            [style.visibility]="mgGetVisible('bSyncWithSAGE')"
+                                                                                            class="bSyncWithSAGEProps mgFont1"
+                                                                                            [attr.disabled]="mgIsDisabled('bSyncWithSAGE')"
+                                                                                        >
+                                                                                            {{mgGetValue('bSyncWithSAGE')}}
+                                                                                            </button>
+                                                                                            <button
+                                                                                                magic="bCustomersPartNumbers"
+                                                                                                class="bCustomersPartNumbersProps mgFont1"
+                                                                                                [attr.disabled]="mgIsDisabled('bCustomersPartNumbers')"
+                                                                                            >
+                                                                                                Customer&#39;s Part Numbers
+                                                                                                </button>
+                                                                                                <button
+                                                                                                    magic="bConvertProspect"
+                                                                                                    class="bConvertProspectProps mgFont1"
+                                                                                                    [attr.disabled]="mgIsDisabled('bConvertProspect')"
+                                                                                                >
+                                                                                                    Convert a Prospect
+                                                                                                    </button>
+                                                                                                    <div>
+                                                                                                        <div
+                                                                                                            magic="cbShowRedundant"
+                                                                                                            class="cbShowRedundantProps mgColor159"
+                                                                                                        >
+                                                                                                            <input
+                                                                                                                type="checkbox"
+                                                                                                                id="cbShowRedundant"
+                                                                                                                formControlName="cbShowRedundant"
+                                                                                                                (change)="mgOnCheckChanged($event,'cbShowRedundant')"
+                                                                                                            />
+                                                                                                            <label for="cbShowRedundant">
+        
+        
+        Show Redundant Customers
+        
+        
+    </label>
+                                                                                                    </div>
+                                                                                                    </div>
+                                                                                                    <button
+                                                                                                        magic="bSelect"
+                                                                                                        [style.visibility]="mgGetVisible('bSelect')"
+                                                                                                        class="bSelectProps mgFont1"
+                                                                                                    >
+                                                                                                        Select
+                                                                                                        </button>
+                                                                                                        <button
+                                                                                                            magic="bOK"
+                                                                                                            [style.visibility]="mgGetVisible('bOK')"
+                                                                                                            class="bOKProps mgFont1"
+                                                                                                        >
+                                                                                                            OK
+                                                                                                            </button>
+                                                                                                            <button
+                                                                                                                magic="bCancel"
+                                                                                                                [style.visibility]="mgGetVisible('bCancel')"
+                                                                                                                class="bCancelProps mgFont1"
+                                                                                                            >
+                                                                                                                Cancel
+                                                                                                                </button>
+                                                                                                                <div class="SubFormQBProps">
+                                                                                                                    <m-subform
+                                                                                                                        magic="SubFormQB"
+                                                                                                                        [style.visibility]="mgGetVisible('SubFormQB')"
+                                                                                                                        class="SubFormQBProps"
+                                                                                                                    >
+                                                                                                                        </m-subform>
+                                                                                                                </div>
+                                                                                                                </div>
+                                                                                                                </form>
