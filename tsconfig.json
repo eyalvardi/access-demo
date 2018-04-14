@@ -15,6 +15,13 @@
     "lib": [
       "es2016",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@magic/angular"  : [ "../@magic/angular" ],
+      "@magic/engine"   : [ "../@magic/engine" ],
+      "@magic/gui"      : [ "../@magic/gui" ],
+      "@magic/utils"    : [ "../@magic/utils" ],
+      "@magic/mscorelib": [ "../@magic/mscorelib" ]
+    }
   }
 }

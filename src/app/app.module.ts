@@ -83,32 +83,15 @@ import { CustomersComponent } from './views/magic-components/customers/customers
 import { AddressComponent }   from './views/magic-components/customers/tabs/address/address.component';
 import { ContactsComponent }  from './views/magic-components/customers/tabs/contacts/contacts.component';
 
-import {componentsList, magicComponents} from "./components-list";
+import {componentsList, magicComponents} from "./views/magic-components/components-list";
+import {MagicComponentsModule} from "./views/magic-components/magic-components.module";
 
 //const magicComponents = componentsList.componentsArray ;//.getAllComponents();
 
 @NgModule({
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
-
     BrowserAnimationsModule,
-    MatTabsModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatDialogModule,
-    MatInputModule,
-    MatTooltipModule,
-
-    /* magic start */
-    MagicModule.forRoot(),
-    ThemeModule,
-    DynamicModule.withComponents(magicComponents),
-
-    CalendarModule,
-    InfiniteScrollModule,
-
-    /* magic end*/
 
     AppRoutingModule,
     BsDropdownModule.forRoot(),
@@ -116,16 +99,12 @@ import {componentsList, magicComponents} from "./components-list";
     ChartsModule
   ],
   declarations: [
-    ...magicComponents,
     AppComponent,
+    LoginComponent,
+
     ...APP_CONTAINERS,
     ...APP_COMPONENTS,
     ...APP_DIRECTIVES,
-    LoginComponent,
-    CustomersComponent,
-    AddressComponent,
-    ContactsComponent,
-    MagicShellComponent
   ],
   providers: [{
     provide: LocationStrategy,

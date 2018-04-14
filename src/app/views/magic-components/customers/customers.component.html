@@ -133,6 +133,13 @@
                   [myTaskId]="parent.mgGetParameters('MainCanvas').myTaskId"
                   [taskDescription]="parent.mgGetParameters('MainCanvas')?.taskDescription">
                 </magic-customers-table>
+
+                <!--<ng-content
+                        *ngIf="parent.mgGetParameters('MainCanvas').myTaskId; else taskLoding"
+                        *ngComponentOutlet="BrowseTablesCTLCustomer; content: myContent"
+                >
+                </ng-content>-->
+
                 <ng-template #taskLoding>
                   <h4>magic-customers-table ...get parameters('MainCanvas')</h4>
                   <pre> {{ parent.mgGetParameters('MainCanvas') | json }}</pre>

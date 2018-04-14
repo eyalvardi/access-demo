@@ -1,14 +1,14 @@
 import {ComponentList} from "@magic/angular";
-import {WebContainer} from "./views/magic-components/WebContainer/WebContainer.component";
-import {BrowseTablesCTLCustomer} from "./views/magic-components/WebTablesCTLCustomerAc/BrowseTablesCTLCustomer.component";
-import {Webtest_CustomerMaintenance_ShowCustomers_CustomerMaintenance} from "./CustomerMaintenance/ShowCustomers/CustomerMaintenance.component";
-import {Webtest_CustomerMaintenance_ShowCustomers_Release_Note_Details_ReleaseNoteDetails} from "./CustomerMaintenance/ShowCustomers/Release Note Details/ReleaseNoteDetails.component";
-import {Webtest_CustomerMaintenance_ShowCustomers_Show_Addresses_ShowAddresses} from "./CustomerMaintenance/ShowCustomers/Show Addresses/ShowAddresses.component";
-import {Webtest_CustomerMaintenance_ShowCustomers_Show_Addresses_Show_Address_Show_Address} from "./CustomerMaintenance/ShowCustomers/Show Addresses/Show Address/Show_Address.component";
-import {Webtest_CustomerMaintenance_ShowCustomers_Show_Addresses_Show_Address_Release_Note_Details_Release_Note_Details} from "./CustomerMaintenance/ShowCustomers/Show Addresses/Show Address/Release Note Details/Release_Note_Details.component";
-import {Webtest_CustomerMaintenance_ShowCustomers_Customer_Output_Settings_Customer_Output_Settings} from "./CustomerMaintenance/ShowCustomers/Customer Output Settings/Customer_Output_Settings.component";
-import {Webtest_CustomerMaintenance_ShowCustomers_Not_Implemeted_Not_Implemeted} from "./CustomerMaintenance/ShowCustomers/Not Implemeted/Not_Implemeted.component";
-import {Webtest_CustomerMaintenance_WorkToList} from "./CustomerMaintenance/WorkToList.component";
+import {WebContainer} from "./WebContainer/WebContainer.component";
+import {BrowseTablesCTLCustomer} from "./WebTablesCTLCustomerAc/BrowseTablesCTLCustomer.component";
+import {Webtest_CustomerMaintenance_ShowCustomers_CustomerMaintenance} from "../../CustomerMaintenance/ShowCustomers/CustomerMaintenance.component";
+import {Webtest_CustomerMaintenance_ShowCustomers_Release_Note_Details_ReleaseNoteDetails} from "../../CustomerMaintenance/ShowCustomers/Release Note Details/ReleaseNoteDetails.component";
+import {Webtest_CustomerMaintenance_ShowCustomers_Show_Addresses_ShowAddresses} from "../../CustomerMaintenance/ShowCustomers/Show Addresses/ShowAddresses.component";
+import {Webtest_CustomerMaintenance_ShowCustomers_Show_Addresses_Show_Address_Show_Address} from "../../CustomerMaintenance/ShowCustomers/Show Addresses/Show Address/Show_Address.component";
+import {Webtest_CustomerMaintenance_ShowCustomers_Show_Addresses_Show_Address_Release_Note_Details_Release_Note_Details} from "../../CustomerMaintenance/ShowCustomers/Show Addresses/Show Address/Release Note Details/Release_Note_Details.component";
+import {Webtest_CustomerMaintenance_ShowCustomers_Customer_Output_Settings_Customer_Output_Settings} from "../../CustomerMaintenance/ShowCustomers/Customer Output Settings/Customer_Output_Settings.component";
+import {Webtest_CustomerMaintenance_ShowCustomers_Not_Implemeted_Not_Implemeted} from "../../CustomerMaintenance/ShowCustomers/Not Implemeted/Not_Implemeted.component";
+import {Webtest_CustomerMaintenance_WorkToList} from "../../CustomerMaintenance/WorkToList.component";
 
 export const componetsHash = {
   WebContainer_WebContainer:

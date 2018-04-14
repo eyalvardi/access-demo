@@ -6,6 +6,7 @@ import { FullLayoutComponent, SimpleLayoutComponent } from './containers';
 import {LoginComponent} from './views/login/login.component';
 
 import {MagicShellComponent} from "./views/magic-components/magic-shell/magic-shell.component";
+import {MagicComponentsModule} from "./views/magic-components/magic-components.module";
 //import {MagicShellComponent} from "@magic/angular";
 
 export const routes: Routes = [
@@ -28,10 +29,7 @@ export const routes: Routes = [
         loadChildren: './views/dashboard/dashboard.module#DashboardModule'
       },
       { path: 'customers',
-        component: MagicShellComponent,
-        data: {
-          title: 'Customers'
-        }
+        loadChildren: './views/magic-components/magic-components.module#MagicComponentsModule'
       }
     ]
   }

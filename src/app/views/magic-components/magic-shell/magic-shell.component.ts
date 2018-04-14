@@ -8,7 +8,7 @@ import {Subscription} from "rxjs/Subscription";
 import {CommandType, GuiCommand} from "@magic/gui";
 import {BaseTaskMagicComponent, GuiInteractiveExecutor, MagicEngine, ModalFormDefinition} from "@magic/angular";
 
-import {componentsList} from "../../../components-list";
+import {componentsList} from "../components-list";
 
 
 @Component({

@@ -7,8 +7,10 @@ import { TaskMagicService } from "@magic/angular";
 	@Component({
 		selector: "mga-WebContainer",
 		providers: [TaskMagicService],
-		//styleUrls: ["./WebContainer.component.css"],
-		templateUrl: "./WebContainer.component.html"
-	})
+		template: `
+      <form [formGroup]="screenFormGroup">
+        <magic-customers [source]="screenFormGroup"></magic-customers>
+      </form>    
+  `})
 	export class WebContainer extends BaseTaskMagicComponent {}
 //}
