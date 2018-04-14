@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormGroup} from "@angular/forms";
-import {Webtest_WebContainer_WebContainer} from "../WebContainer/WebContainer.component";
+import {WebContainer} from "../WebContainer/WebContainer.component";
 
 @Component({
   selector   : 'magic-customers',
@@ -10,5 +10,5 @@ import {Webtest_WebContainer_WebContainer} from "../WebContainer/WebContainer.co
 export class CustomersComponent {
   @Input('source') screenFormGroup:FormGroup;
 
-  constructor(public parent: Webtest_WebContainer_WebContainer.WebContainer){}
+  constructor(public parent: WebContainer){}
 }

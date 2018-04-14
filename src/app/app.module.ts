@@ -1,6 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import {ReactiveFormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule, MatInputModule, MatPaginatorModule, MatTooltipModule} from "@angular/material";
 
 import { AppComponent } from './app.component';
 
@@ -13,7 +19,7 @@ import {
 const APP_CONTAINERS = [
   FullLayoutComponent,
   SimpleLayoutComponent
-]
+];
 
 // Import components
 import {
@@ -64,47 +70,28 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
-import { LoginComponent } from './views/login/login.component';
-import { CustomersComponent } from './views/magic-components/customers/customers.component';
-import { AddressComponent } from './views/magic-components/customers/tabs/address/address.component';
-import { ContactsComponent } from './views/magic-components/customers/tabs/contacts/contacts.component';
-
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatTableModule} from '@angular/material/table';
-import {MatDialogModule, MatInputModule, MatPaginatorModule, MatTooltipModule} from "@angular/material";
-import {MagicModule, ThemeModule} from "@magic/angular";
 import {CalendarModule} from "primeng/primeng";
 import {InfiniteScrollModule} from "ngx-infinite-scroll";
 import {DynamicModule} from "ng-dynamic-component";
-import {ReactiveFormsModule} from "@angular/forms";
-import { MagicShellComponent } from './views/magic-components/magic-shell/magic-shell.component';
-import {componentsList} from "./components-list";
 
-const magicComponents = componentsList.componentsArray ;//.getAllComponents();
+import {MagicModule, ThemeModule} from "@magic/angular";
+
+// views
+import { MagicShellComponent } from './views/magic-components/magic-shell/magic-shell.component';
+import { LoginComponent }     from './views/login/login.component';
+import { CustomersComponent } from './views/magic-components/customers/customers.component';
+import { AddressComponent }   from './views/magic-components/customers/tabs/address/address.component';
+import { ContactsComponent }  from './views/magic-components/customers/tabs/contacts/contacts.component';
+
+import {componentsList, magicComponents} from "./views/magic-components/components-list";
+import {MagicComponentsModule} from "./views/magic-components/magic-components.module";
+
+//const magicComponents = componentsList.componentsArray ;//.getAllComponents();
 
 @NgModule({
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
-
     BrowserAnimationsModule,
-    MatTabsModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatDialogModule,
-    MatInputModule,
-    MatTooltipModule,
-
-    /* magic start */
-    MagicModule.forRoot(),
-    ThemeModule,
-    DynamicModule.withComponents(magicComponents),
-
-    CalendarModule,
-    InfiniteScrollModule,
-
-    /* magic end*/
 
     AppRoutingModule,
     BsDropdownModule.forRoot(),
@@ -112,16 +99,12 @@ const magicComponents = componentsList.componentsArray ;//.getAllComponents();
     ChartsModule
   ],
   declarations: [
-    ...magicComponents,
     AppComponent,
+    LoginComponent,
+
     ...APP_CONTAINERS,
     ...APP_COMPONENTS,
     ...APP_DIRECTIVES,
-    LoginComponent,
-    CustomersComponent,
-    AddressComponent,
-    ContactsComponent,
-    MagicShellComponent
   ],
   providers: [{
     provide: LocationStrategy,

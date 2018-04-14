@@ -1,0 +1,82 @@
+<form
+    novalidate
+    [formGroup]="screenFormGroup"
+>
+    <div
+        magic="Customer_Output_Settings"
+        class="Customer_Output_SettingsProps mgColor159"
+    >
+        <div class="[SUBFORM] -  Info Bar H=3.313Props">
+            <m-subform
+                magic="[SUBFORM] -  Info Bar H=3.313"
+                class="[SUBFORM] -  Info Bar H=3.313Props"
+            >
+                </m-subform>
+        </div>
+        <div
+            magic="Group2"
+            class="Group2Props mgColor159"
+        >
+            </div>
+            <div>
+                <div
+                    magic="P/R: Override Invoice Settings"
+                    class="P/R: Override Invoice SettingsProps mgColor159"
+                >
+                    <input
+                        type="checkbox"
+                        id="P/R: Override Invoice Settings"
+                        formControlName="P/R: Override Invoice Settings"
+                        (change)="mgOnCheckChanged($event,'P/R: Override Invoice Settings')"
+                    />
+                    <label for="P/R: Override Invoice Settings">
+        
+        
+        Customer Specific Invoice Settings?
+        
+        
+    </label>
+            </div>
+            </div>
+            <button
+                magic="Button4"
+                class="Button4Props mgFont1"
+                [attr.disabled]="mgIsDisabled('Button4')"
+            >
+                Edit
+                </button>
+                <div>
+                    <div
+                        magic="P/R: Override Credit Sett_0001"
+                        class="P/R: Override Credit Sett_0001Props mgColor159"
+                    >
+                        <input
+                            type="checkbox"
+                            id="P/R: Override Credit Sett_0001"
+                            formControlName="P/R: Override Credit Sett_0001"
+                            (change)="mgOnCheckChanged($event,'P/R: Override Credit Sett_0001')"
+                        />
+                        <label for="P/R: Override Credit Sett_0001">
+        
+        
+        Customer Specific Credit Note Settings?
+        
+        
+    </label>
+                </div>
+                </div>
+                <button
+                    magic="Button6"
+                    class="Button6Props mgFont1"
+                    [attr.disabled]="mgIsDisabled('Button6')"
+                >
+                    Edit
+                    </button>
+                    <button
+                        magic="Button7"
+                        class="Button7Props mgFont1"
+                    >
+                        O&amp;K
+                        </button>
+                        </div>
+                        </form>

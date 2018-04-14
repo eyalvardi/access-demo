@@ -1,28 +1,44 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {BaseTaskMagicComponent, GuiInteractiveExecutor, MagicEngine, ModalFormDefinition} from "@magic/angular";
+import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {Title} from "@angular/platform-browser";
+
 import {filter} from "rxjs/operators";
+import {Subscription} from "rxjs/Subscription";
+
 import {CommandType, GuiCommand} from "@magic/gui";
-import {componentsList} from "../../../components-list";
+import {BaseTaskMagicComponent, GuiInteractiveExecutor, MagicEngine, ModalFormDefinition} from "@magic/angular";
+
+import {componentsList} from "../components-list";
+
 
 @Component({
   selector: 'app-magic-shell',
-  templateUrl: './magic-shell.component.html',
-  styleUrls: ['./magic-shell.component.scss']
-})
-export class MagicShellComponent implements OnInit {
+  template:`
+    <div>
+      <mga-WebContainer
+        *ngIf            ="MainCompParameters"
+        [myTaskId]       ="MainCompParameters.myTaskId"
+        [taskDescription]="MainCompParameters.taskDescription">
+      </mga-WebContainer>
+
+      <app-magic-modal
+        *ngIf="ModalFormDefinition.comp !== null"
+        [ModalComp]="ModalFormDefinition.comp"
+        [ModalCompParameters]="ModalFormDefinition.parameters">
+      </app-magic-modal>
+    </div>
+    
+`})
+export class MagicShellComponent implements OnInit,OnDestroy {
+
   constructor(
     private router: Router,
-    /* magic start*/
     protected magic: MagicEngine,
     protected changeDetectorRef: ChangeDetectorRef,
-    private   titleService: Title
-    /* magic end*/
-  ) {
-    this.initializeMagic();
-    BaseTaskMagicComponent.componentListBase = componentsList;
-    this.setTitle();
+    private   titleService: Title) {
+      this.initializeMagic();
+      BaseTaskMagicComponent.componentList = componentsList;
+      this.setTitle();
   }
 
   ngOnInit() {
@@ -30,6 +46,7 @@ export class MagicShellComponent implements OnInit {
   }
 
   /* magic start*/
+  private debugSub: Subscription;
   public MainComp: Component;
   public MainCompParameters: any;
   public ModalFormDefinition: ModalFormDefinition = new ModalFormDefinition();
@@ -39,15 +56,15 @@ export class MagicShellComponent implements OnInit {
       this.InjectComponent(formName, taskId, taskDescription);
     });
     this.regUpdatesUI();
+    this.debugLog();
   }
 
-  public setTitle() {
-    const newTitle: string = BaseTaskMagicComponent.componentListBase.title;
-    this.titleService.setTitle(newTitle);
+  setTitle() {
+    this.titleService.setTitle(BaseTaskMagicComponent.componentList.title);
   }
 
   private InjectComponent(formName: string, taskId: string, taskDescription: string) {
-    this.MainComp = BaseTaskMagicComponent.componentListBase.getComponents(formName);
+    this.MainComp = BaseTaskMagicComponent.componentList.getComponents(formName);
     this.MainCompParameters = {myTaskId: taskId, taskDescription: taskDescription};
 
     this.changeDetectorRef.detectChanges();
@@ -55,16 +72,15 @@ export class MagicShellComponent implements OnInit {
 
   regUpdatesUI() {
     this.magic.refreshDom.pipe(
-      filter(command => command.TaskTag === '0')
-    )
+        filter(command => command.TaskTag === '0')
+      )
       .subscribe(command => {
         this.executeCommand(command);
       });
 
-    this.magic
-      .interactiveCommands.pipe(
-      filter(command => command.TaskTag === '0')
-    )
+    this.magic.interactiveCommands.pipe(
+        filter(command => command.TaskTag === '0')
+      )
       .subscribe(command => {
         let executor = new GuiInteractiveExecutor();
         executor.command = command;
@@ -72,12 +88,17 @@ export class MagicShellComponent implements OnInit {
       });
   }
 
+  debugLog(){
+    this.debugSub = this.magic.refreshDom.subscribe(console.log);
+    this.debugSub.add(this.magic.interactiveCommands.subscribe(console.log));
+  }
+
   executeCommand(command: GuiCommand): void {
     console.log('AppComponent.executeCommand()');
     switch (command.CommandType) {
       case CommandType.OPEN_FORM:
-        this.ModalFormDefinition.taskId = command.stringList[0];
-        this.ModalFormDefinition.comp = BaseTaskMagicComponent.componentListBase.getComponents(command.str);
+        this.ModalFormDefinition.taskId     = command.stringList[0];
+        this.ModalFormDefinition.comp       = BaseTaskMagicComponent.componentList.getComponents(command.str);
         this.ModalFormDefinition.parameters = {myTaskId: command.stringList[0], taskDescription: command.stringList[1]};
         this.changeDetectorRef.detectChanges();
         break;
@@ -88,6 +109,10 @@ export class MagicShellComponent implements OnInit {
         }
         break;
     }
+  }
+
+  ngOnDestroy(): void {
+    this.debugSub.unsubscribe();
   }
 
   /* magic end*/

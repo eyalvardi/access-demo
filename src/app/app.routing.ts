@@ -2,13 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // Import Containers
-import {
-  FullLayoutComponent,
-  SimpleLayoutComponent
-} from './containers';
+import { FullLayoutComponent, SimpleLayoutComponent } from './containers';
 import {LoginComponent} from './views/login/login.component';
-import {CustomersComponent} from './views/magic-components/customers/customers.component';
+
 import {MagicShellComponent} from "./views/magic-components/magic-shell/magic-shell.component";
+import {MagicComponentsModule} from "./views/magic-components/magic-components.module";
+//import {MagicShellComponent} from "@magic/angular";
 
 export const routes: Routes = [
   {
@@ -30,10 +29,7 @@ export const routes: Routes = [
         loadChildren: './views/dashboard/dashboard.module#DashboardModule'
       },
       { path: 'customers',
-        component: MagicShellComponent,
-        data: {
-          title: 'Customers'
-        }
+        loadChildren: './views/magic-components/magic-components.module#MagicComponentsModule'
       }
     ]
   }

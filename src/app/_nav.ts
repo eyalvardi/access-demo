@@ -18,8 +18,8 @@ export const navigation = [
     }
   },
   {
-    name: 'Quotation Request Maintenance',
-    url: '/dashboard2',
+    name: 'Quotation Request',
+    url: '/login',
     icon: 'icon-speedometer',
     badge: {
       variant: 'info',
@@ -28,7 +28,7 @@ export const navigation = [
   },
   {
     name: 'Quote Maintenance',
-    url: '/dashboard3',
+    url: '/login',
     icon: 'icon-speedometer',
     badge: {
       variant: 'info',
@@ -37,7 +37,7 @@ export const navigation = [
   },
   {
     name: 'Sales Order Menu',
-    url: '/dashboard4',
+    url: '/login',
     icon: 'icon-speedometer',
     badge: {
       variant: 'info',
@@ -46,7 +46,7 @@ export const navigation = [
   },
   {
     name: 'Delivery Menu',
-    url: '/dashboard5',
+    url: '/login',
     icon: 'icon-speedometer',
     badge: {
       variant: 'info',
@@ -55,7 +55,7 @@ export const navigation = [
   },
   {
     name: 'Release Notes',
-    url: '/dashboard6',
+    url: '/login',
     icon: 'icon-speedometer',
     badge: {
       variant: 'info',
@@ -72,7 +72,7 @@ export const navigation = [
     }
   },
   {
-    name: 'Customer After-Sales Menu',
+    name: 'Customer After-Sales',
     url: '/dashboard7',
     icon: 'icon-speedometer',
     badge: {

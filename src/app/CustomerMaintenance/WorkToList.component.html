@@ -1,0 +1,40 @@
+<form
+  novalidate
+  [formGroup]="screenFormGroup"
+>
+  <div
+    magic="WorkToList"
+    class="WorkToListProps"
+  >
+    <label
+      magic="Label2"
+      class="Label2Props mgFont1"
+    >
+      v: Report Unique
+    </label>
+    <div>
+      <input
+        type="text"
+        formControlName="eReportUnique"
+        magic="eReportUnique"
+        class="eReportUniqueProps"
+        pattern="^.{0,50}$"
+        alphadirective
+      />
+    </div>
+      <!--<div *ngIf="(screenFormGroup.get('eReportUnique').touched) && (
+                        screenFormGroup.get('eReportUnique').hasError('pattern')
+
+                        )">
+        <p>control status: {{ screenFormGroup.get('eReportUnique').errors | json }}</p>
+      </div>
+    </div>
+    <div class="CustomerScreenProps">
+      <m-subform
+        magic="CustomerScreen"
+        class="CustomerScreenProps"
+      >
+      </m-subform>
+    </div>-->
+  </div>
+</form>

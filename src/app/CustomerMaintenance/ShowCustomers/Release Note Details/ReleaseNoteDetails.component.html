@@ -1,0 +1,72 @@
+<form
+    novalidate
+    [formGroup]="screenFormGroup"
+>
+    <div
+        #mainbody
+        magic="ReleaseNoteDetails"
+        class="ReleaseNoteDetailsProps mgColor159"
+    >
+        <div class="[SUBFORM] -  Info Bar H=3.313Props">
+            <m-subform
+                magic="[SUBFORM] -  Info Bar H=3.313"
+                class="[SUBFORM] -  Info Bar H=3.313Props"
+            >
+                </m-subform>
+        </div>
+        <div
+            magic="Group2"
+            class="Group2Props mgColor159"
+        >
+            <div>
+                <textarea
+                    type="text"
+                    formControlName="v: Release Note Comments"
+                    magic="v: Release Note Comments"
+                    class="v: Release Note CommentsProps multiline"
+                    pattern="^.{0,1500}$"
+                >
+                    </textarea>
+                    <div *ngIf="(screenFormGroup.get('v: Release Note Comments').touched) && (
+                        screenFormGroup.get('v: Release Note Comments').hasError('pattern')
+                        
+                        )">
+                        <p>control status: {{ screenFormGroup.get('v: Release Note Comments').errors | json }}</p>
+                    </div>
+            </div>
+            <div>
+                <div
+                    magic="v: Use Customer Comments?_0001"
+                    class="v: Use Customer Comments?_0001Props mgColor159"
+                >
+                    <input
+                        type="checkbox"
+                        id="v: Use Customer Comments?_0001"
+                        formControlName="v: Use Customer Comments?_0001"
+                        (change)="mgOnCheckChanged($event,'v: Use Customer Comments?_0001')"
+                    />
+                    <label for="v: Use Customer Comments?_0001">
+        
+        
+        Use Customer Specific Release Note Comments
+        
+        
+    </label>
+            </div>
+            </div>
+            </div>
+            <button
+                magic="Button5"
+                [style.visibility]="mgGetVisible('Button5')"
+                class="Button5Props mgFont1"
+            >
+                {{mgGetValue('Button5')}}
+                </button>
+                <button
+                    magic="Button6"
+                    class="Button6Props mgFont1"
+                >
+                    {{mgGetValue('Button6')}}
+                    </button>
+                    </div>
+                    </form>

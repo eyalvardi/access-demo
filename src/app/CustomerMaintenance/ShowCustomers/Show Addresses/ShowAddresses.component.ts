@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 
-import { BaseTaskMagicComponent } from "@magic/angular";
-import { TaskMagicService } from "@magic/angular";
+
 
 import {
 	MatPaginator,
@@ -12,36 +11,48 @@ import {
 import { SelectionModel } from "@angular/cdk/collections";
 import { ViewChild } from "@angular/core";
 import { ChangeDetectorRef } from "@angular/core";
-import { Router, ActivatedRoute } from "@angular/router";
+import {BaseTaskMagicComponent, TaskMagicService} from "@magic/angular";
 
-//export namespace Webtest_WebTablesCTLCustomerAc_BrowseTablesCTLCustomer {
+export namespace Webtest_CustomerMaintenance_ShowCustomers_Show_Addresses_ShowAddresses {
 	@Component({
-		selector: "magic-customers-table",
+		selector: "mga-ShowAddresses",
 		providers: [TaskMagicService],
-		styleUrls: ["./BrowseTablesCTLCustomer.component.css"],
-		templateUrl: "./BrowseTablesCTLCustomer.component.html"
+		templateUrl: "./ShowAddresses.component.html"
 	})
-	export class BrowseTablesCTLCustomer extends BaseTaskMagicComponent {
+	export class ShowAddresses extends BaseTaskMagicComponent {
 		@ViewChild(MatPaginator) paginator: MatPaginator;
 		@ViewChild(MatSort) sort: MatSort;
 		displayedColumns = [
-			"cGroupCode",
-			"cCompanyCode",
-			"cDivisionCode",
-			"cCustomerAccountCode"
+			"Address Code &gt;",
+
+			"Description [click to view full address]",
+
+			"Default Address For",
+
+			"Address Line 1",
+
+			"Address Line 2",
+
+			"Address Line 3",
+
+			"Address Line 4",
+
+			"Address Line 5",
+
+			"Post Code",
+
+			"Telephone",
+
+			"Fax",
+
+			"Email"
 		];
-
-    pageEvent;
-    sortData;
-
 		constructor(
 			public dialog: MatDialog,
 			protected ref: ChangeDetectorRef,
-      public task: TaskMagicService,
-			protected router: Router,
-			protected activatedRoute: ActivatedRoute
+			public task: TaskMagicService
 		) {
-			super(ref, task/*, router, activatedRoute*/);
+			super(ref, task);
 		}
 		dataSource = new MatTableDataSource<Element>(this.task.Records.list);
 		selection = new SelectionModel<Element>(false, []);
@@ -63,4 +74,4 @@ import { Router, ActivatedRoute } from "@angular/router";
 			return this.dialog;
 		}
 	}
-//}
+}

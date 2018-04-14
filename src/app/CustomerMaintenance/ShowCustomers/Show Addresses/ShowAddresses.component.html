@@ -1,0 +1,256 @@
+<form
+    novalidate
+    [formGroup]="screenFormGroup"
+>
+    <div
+        magic="ShowAddresses"
+        class="ShowAddressesProps"
+    >
+        <div class="example-container mat-elevation-z8 tAddressTableContainerProps">
+            <mat-table
+                #table
+                [dataSource]="dataSource"
+                class="tAddressProps"
+                matSort
+                matSortDisableClear
+                (matSortChange)="sortData($event)"
+            >
+                <ng-container
+                    magic="Address Code &gt;"
+                    matColumnDef="Address Code &gt;"
+                >
+                    <mat-header-cell *matHeaderCellDef> Address Code &gt; </mat-header-cell>
+                    <mat-cell
+                        *matCellDef="let row"
+                        magicMark="magicTableRowContainer"
+                    >
+                        <label
+                            magic="eAddressCode"
+                            [rowId]="row.rowId"
+                            class="eAddressCodeProps mgFont1 mgColor142 hidden_border"
+                        >
+                            {{mgGetValue('eAddressCode', row.rowId) }}
+                            </label>
+                            </mat-cell>
+                            </ng-container>
+                            <ng-container
+                                magic="Description [click to view full address]"
+                                matColumnDef="Description [click to view full address]"
+                            >
+                                <mat-header-cell *matHeaderCellDef> Description [click to view full address] </mat-header-cell>
+                                <mat-cell
+                                    *matCellDef="let row"
+                                    magicMark="magicTableRowContainer"
+                                >
+                                    <label
+                                        magic="eDescription"
+                                        [rowId]="row.rowId"
+                                        class="eDescriptionProps mgFont1 mgColor142 hidden_border"
+                                    >
+                                        {{mgGetValue('eDescription', row.rowId) }}
+                                        </label>
+                                        </mat-cell>
+                                        </ng-container>
+                                        <ng-container
+                                            magic="Default Address For"
+                                            matColumnDef="Default Address For"
+                                        >
+                                            <mat-header-cell *matHeaderCellDef> Default Address For </mat-header-cell>
+                                            <mat-cell
+                                                *matCellDef="let row"
+                                                magicMark="magicTableRowContainer"
+                                            >
+                                                <label
+                                                    magic="eDefaultAddressFor"
+                                                    [rowId]="row.rowId"
+                                                    class="eDefaultAddressForProps mgFont1 mgColor142 hidden_border"
+                                                >
+                                                    {{mgGetValue('eDefaultAddressFor', row.rowId) }}
+                                                    </label>
+                                                    </mat-cell>
+                                                    </ng-container>
+                                                    <ng-container
+                                                        magic="Address Line 1"
+                                                        matColumnDef="Address Line 1"
+                                                    >
+                                                        <mat-header-cell *matHeaderCellDef> Address Line 1 </mat-header-cell>
+                                                        <mat-cell
+                                                            *matCellDef="let row"
+                                                            magicMark="magicTableRowContainer"
+                                                        >
+                                                            <label
+                                                                magic="eAddressLine1"
+                                                                [rowId]="row.rowId"
+                                                                class="eAddressLine1Props mgFont1 mgColor142 hidden_border"
+                                                            >
+                                                                {{mgGetValue('eAddressLine1', row.rowId) }}
+                                                                </label>
+                                                                </mat-cell>
+                                                                </ng-container>
+                                                                <ng-container
+                                                                    magic="Address Line 2"
+                                                                    matColumnDef="Address Line 2"
+                                                                >
+                                                                    <mat-header-cell *matHeaderCellDef> Address Line 2 </mat-header-cell>
+                                                                    <mat-cell
+                                                                        *matCellDef="let row"
+                                                                        magicMark="magicTableRowContainer"
+                                                                    >
+                                                                        <label
+                                                                            magic="eAddressLine2"
+                                                                            [rowId]="row.rowId"
+                                                                            class="eAddressLine2Props mgFont1 mgColor142 hidden_border"
+                                                                        >
+                                                                            {{mgGetValue('eAddressLine2', row.rowId) }}
+                                                                            </label>
+                                                                            </mat-cell>
+                                                                            </ng-container>
+                                                                            <ng-container
+                                                                                magic="Address Line 3"
+                                                                                matColumnDef="Address Line 3"
+                                                                            >
+                                                                                <mat-header-cell *matHeaderCellDef> Address Line 3 </mat-header-cell>
+                                                                                <mat-cell
+                                                                                    *matCellDef="let row"
+                                                                                    magicMark="magicTableRowContainer"
+                                                                                >
+                                                                                    <label
+                                                                                        magic="eeAddressLine3"
+                                                                                        [rowId]="row.rowId"
+                                                                                        class="eeAddressLine3Props mgFont1 mgColor142 hidden_border"
+                                                                                    >
+                                                                                        {{mgGetValue('eeAddressLine3', row.rowId) }}
+                                                                                        </label>
+                                                                                        </mat-cell>
+                                                                                        </ng-container>
+                                                                                        <ng-container
+                                                                                            magic="Address Line 4"
+                                                                                            matColumnDef="Address Line 4"
+                                                                                        >
+                                                                                            <mat-header-cell *matHeaderCellDef> Address Line 4 </mat-header-cell>
+                                                                                            <mat-cell
+                                                                                                *matCellDef="let row"
+                                                                                                magicMark="magicTableRowContainer"
+                                                                                            >
+                                                                                                <label
+                                                                                                    magic="eeAddressLine4"
+                                                                                                    [rowId]="row.rowId"
+                                                                                                    class="eeAddressLine4Props mgFont1 mgColor142 hidden_border"
+                                                                                                >
+                                                                                                    {{mgGetValue('eeAddressLine4', row.rowId) }}
+                                                                                                    </label>
+                                                                                                    </mat-cell>
+                                                                                                    </ng-container>
+                                                                                                    <ng-container
+                                                                                                        magic="Address Line 5"
+                                                                                                        matColumnDef="Address Line 5"
+                                                                                                    >
+                                                                                                        <mat-header-cell *matHeaderCellDef> Address Line 5 </mat-header-cell>
+                                                                                                        <mat-cell
+                                                                                                            *matCellDef="let row"
+                                                                                                            magicMark="magicTableRowContainer"
+                                                                                                        >
+                                                                                                            <label
+                                                                                                                magic="eeAddressLine5"
+                                                                                                                [rowId]="row.rowId"
+                                                                                                                class="eeAddressLine5Props mgFont1 mgColor142 hidden_border"
+                                                                                                            >
+                                                                                                                {{mgGetValue('eeAddressLine5', row.rowId) }}
+                                                                                                                </label>
+                                                                                                                </mat-cell>
+                                                                                                                </ng-container>
+                                                                                                                <ng-container
+                                                                                                                    magic="Post Code"
+                                                                                                                    matColumnDef="Post Code"
+                                                                                                                >
+                                                                                                                    <mat-header-cell *matHeaderCellDef> Post Code </mat-header-cell>
+                                                                                                                    <mat-cell
+                                                                                                                        *matCellDef="let row"
+                                                                                                                        magicMark="magicTableRowContainer"
+                                                                                                                    >
+                                                                                                                        <label
+                                                                                                                            magic="ePostCode"
+                                                                                                                            [rowId]="row.rowId"
+                                                                                                                            class="ePostCodeProps mgFont1 mgColor142 hidden_border"
+                                                                                                                        >
+                                                                                                                            {{mgGetValue('ePostCode', row.rowId) }}
+                                                                                                                            </label>
+                                                                                                                            </mat-cell>
+                                                                                                                            </ng-container>
+                                                                                                                            <ng-container
+                                                                                                                                magic="Telephone"
+                                                                                                                                matColumnDef="Telephone"
+                                                                                                                            >
+                                                                                                                                <mat-header-cell *matHeaderCellDef> Telephone </mat-header-cell>
+                                                                                                                                <mat-cell
+                                                                                                                                    *matCellDef="let row"
+                                                                                                                                    magicMark="magicTableRowContainer"
+                                                                                                                                >
+                                                                                                                                    <label
+                                                                                                                                        magic="eTelephone"
+                                                                                                                                        [rowId]="row.rowId"
+                                                                                                                                        class="eTelephoneProps mgFont1 mgColor142 hidden_border"
+                                                                                                                                    >
+                                                                                                                                        {{mgGetValue('eTelephone', row.rowId) }}
+                                                                                                                                        </label>
+                                                                                                                                        </mat-cell>
+                                                                                                                                        </ng-container>
+                                                                                                                                        <ng-container
+                                                                                                                                            magic="Fax"
+                                                                                                                                            matColumnDef="Fax"
+                                                                                                                                        >
+                                                                                                                                            <mat-header-cell *matHeaderCellDef> Fax </mat-header-cell>
+                                                                                                                                            <mat-cell
+                                                                                                                                                *matCellDef="let row"
+                                                                                                                                                magicMark="magicTableRowContainer"
+                                                                                                                                            >
+                                                                                                                                                <label
+                                                                                                                                                    magic="eFax"
+                                                                                                                                                    [rowId]="row.rowId"
+                                                                                                                                                    class="eFaxProps mgFont1 mgColor142 hidden_border"
+                                                                                                                                                >
+                                                                                                                                                    {{mgGetValue('eFax', row.rowId) }}
+                                                                                                                                                    </label>
+                                                                                                                                                    </mat-cell>
+                                                                                                                                                    </ng-container>
+                                                                                                                                                    <ng-container
+                                                                                                                                                        magic="Email"
+                                                                                                                                                        matColumnDef="Email"
+                                                                                                                                                    >
+                                                                                                                                                        <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+                                                                                                                                                        <mat-cell
+                                                                                                                                                            *matCellDef="let row"
+                                                                                                                                                            magicMark="magicTableRowContainer"
+                                                                                                                                                        >
+                                                                                                                                                            <label
+                                                                                                                                                                magic="eEmail"
+                                                                                                                                                                [rowId]="row.rowId"
+                                                                                                                                                                class="eEmailProps mgFont1 mgColor142 hidden_border"
+                                                                                                                                                            >
+                                                                                                                                                                {{mgGetValue('eEmail', row.rowId) }}
+                                                                                                                                                                </label>
+                                                                                                                                                                </mat-cell>
+                                                                                                                                                                </ng-container>
+                                                                                                                                                                <mat-header-row
+                                                                                                                                                                    *matHeaderRowDef="displayedColumns"
+                                                                                                                                                                    class="tAddress_table_headerRowProps"
+                                                                                                                                                                ></mat-header-row>
+                                                                                                                                                                    <mat-row
+                                                                                                                                                                        *matRowDef="let row; columns: displayedColumns;"
+                                                                                                                                                                        class="tAddress_table_rowProps"
+                                                                                                                                                                        [ngClass]="{ 'selected': selection.isSelected(row)}"
+                                                                                                                                                                        magicMark="magicTableRowContainer"
+                                                                                                                                                                        (click)="selectRow(row.rowId)"
+                                                                                                                                                                    >
+                                                                                                                                                                        </mat-row>
+                                                                                                                                                                        </mat-table>
+                                                                                                                                                                        <mat-paginator
+                                                                                                                                                                            #paginator
+                                                                                                                                                                            [pageSize]="10"
+                                                                                                                                                                            [pageSizeOptions]="[5, 10, 20]"
+                                                                                                                                                                            (page)="pageEvent = $event; mgOnPaginateChange($event)"
+                                                                                                                                                                        >
+                                                                                                                                                                            </mat-paginator>
+        </div>
+        </div>
+        </form>

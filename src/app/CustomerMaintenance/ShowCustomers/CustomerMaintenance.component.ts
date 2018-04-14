@@ -1,7 +1,5 @@
 import { Component } from "@angular/core";
 
-import { BaseTaskMagicComponent } from "@magic/angular";
-import { TaskMagicService } from "@magic/angular";
 
 import {
 	MatPaginator,
@@ -12,36 +10,23 @@ import {
 import { SelectionModel } from "@angular/cdk/collections";
 import { ViewChild } from "@angular/core";
 import { ChangeDetectorRef } from "@angular/core";
-import { Router, ActivatedRoute } from "@angular/router";
+import {BaseTaskMagicComponent, TaskMagicService} from "@magic/angular";
 
-//export namespace Webtest_WebTablesCTLCustomerAc_BrowseTablesCTLCustomer {
+export namespace Webtest_CustomerMaintenance_ShowCustomers_CustomerMaintenance {
 	@Component({
-		selector: "magic-customers-table",
-		providers: [TaskMagicService],
-		styleUrls: ["./BrowseTablesCTLCustomer.component.css"],
-		templateUrl: "./BrowseTablesCTLCustomer.component.html"
+		selector: "mga-CustomerMaintenance",
+		templateUrl: "./CustomerMaintenance.component.html"
 	})
-	export class BrowseTablesCTLCustomer extends BaseTaskMagicComponent {
+	export class CustomerMaintenance extends BaseTaskMagicComponent {
 		@ViewChild(MatPaginator) paginator: MatPaginator;
 		@ViewChild(MatSort) sort: MatSort;
-		displayedColumns = [
-			"cGroupCode",
-			"cCompanyCode",
-			"cDivisionCode",
-			"cCustomerAccountCode"
-		];
-
-    pageEvent;
-    sortData;
-
+		displayedColumns = ["Account Code", "Customer Name", "TCP"];
 		constructor(
 			public dialog: MatDialog,
 			protected ref: ChangeDetectorRef,
-      public task: TaskMagicService,
-			protected router: Router,
-			protected activatedRoute: ActivatedRoute
+			public task: TaskMagicService
 		) {
-			super(ref, task/*, router, activatedRoute*/);
+			super(ref, task);
 		}
 		dataSource = new MatTableDataSource<Element>(this.task.Records.list);
 		selection = new SelectionModel<Element>(false, []);
@@ -63,4 +48,4 @@ import { Router, ActivatedRoute } from "@angular/router";
 			return this.dialog;
 		}
 	}
-//}
+}
