@@ -1,6 +1,6 @@
 import {ComponentList} from "@magic/angular";
-import {Webtest_WebContainer_WebContainer} from "./views/magic-components/WebContainer/WebContainer.component";
-import {Webtest_WebTablesCTLCustomerAc_BrowseTablesCTLCustomer} from "./views/magic-components/WebTablesCTLCustomerAc/BrowseTablesCTLCustomer.component";
+import {WebContainer} from "./views/magic-components/WebContainer/WebContainer.component";
+import {BrowseTablesCTLCustomer} from "./views/magic-components/WebTablesCTLCustomerAc/BrowseTablesCTLCustomer.component";
 import {Webtest_CustomerMaintenance_ShowCustomers_CustomerMaintenance} from "./CustomerMaintenance/ShowCustomers/CustomerMaintenance.component";
 import {Webtest_CustomerMaintenance_ShowCustomers_Release_Note_Details_ReleaseNoteDetails} from "./CustomerMaintenance/ShowCustomers/Release Note Details/ReleaseNoteDetails.component";
 import {Webtest_CustomerMaintenance_ShowCustomers_Show_Addresses_ShowAddresses} from "./CustomerMaintenance/ShowCustomers/Show Addresses/ShowAddresses.component";
@@ -12,10 +12,10 @@ import {Webtest_CustomerMaintenance_WorkToList} from "./CustomerMaintenance/Work
 
 export const componetsHash = {
   WebContainer_WebContainer:
-  Webtest_WebContainer_WebContainer.WebContainer,
+  WebContainer,
 
   WebTablesCTLCustomerAc_BrowseTablesCTLCustomer:
-  Webtest_WebTablesCTLCustomerAc_BrowseTablesCTLCustomer.BrowseTablesCTLCustomer,
+  BrowseTablesCTLCustomer,
 
 
   CustomerMaintenance_ShowCustomers_CustomerMaintenance:
@@ -44,6 +44,10 @@ export const componetsHash = {
   Webtest_CustomerMaintenance_WorkToList.WorkToList
 };
 
+export const magicComponents = [
+  WebContainer,
+  BrowseTablesCTLCustomer
+];
 
 export const componentsList = new ComponentList(componetsHash, "Access");
 

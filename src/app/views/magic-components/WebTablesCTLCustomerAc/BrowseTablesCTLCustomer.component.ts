@@ -14,7 +14,7 @@ import { ViewChild } from "@angular/core";
 import { ChangeDetectorRef } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 
-export namespace Webtest_WebTablesCTLCustomerAc_BrowseTablesCTLCustomer {
+//export namespace Webtest_WebTablesCTLCustomerAc_BrowseTablesCTLCustomer {
 	@Component({
 		selector: "magic-customers-table",
 		providers: [TaskMagicService],
@@ -30,6 +30,10 @@ export namespace Webtest_WebTablesCTLCustomerAc_BrowseTablesCTLCustomer {
 			"cDivisionCode",
 			"cCustomerAccountCode"
 		];
+
+    pageEvent;
+    sortData;
+
 		constructor(
 			public dialog: MatDialog,
 			protected ref: ChangeDetectorRef,
@@ -59,4 +63,4 @@ export namespace Webtest_WebTablesCTLCustomerAc_BrowseTablesCTLCustomer {
 			return this.dialog;
 		}
 	}
-}
+//}
