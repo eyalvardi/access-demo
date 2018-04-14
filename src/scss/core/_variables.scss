@@ -37,7 +37,7 @@ $vimeo:                               #aad450 !default;
 
 // Navbar
 
-$navbar-height:                       55px !default;
+$navbar-height:                       56px !default;
 $navbar-bg:                           #fff !default;
 $navbar-border: (
   bottom: (
@@ -46,10 +46,10 @@ $navbar-border: (
     color:                            $border-color
   )
 )  !default;
-$navbar-brand-width:                  155px !default;
+$navbar-brand-width:                  224px !default;
 $navbar-brand-bg:                     #fff !default;
-$navbar-brand-logo:                   url('../img/logo.png') !default;
-$navbar-brand-logo-size:              78px auto !default;
+$navbar-brand-logo:                   url('../img/logo_acfm.jpg') !default;
+$navbar-brand-logo-size:             92px auto !default;
 $navbar-brand-border: (
   bottom: (
     size:                             1px,
@@ -74,14 +74,14 @@ $navbar-toggler-icon-hover:           str-replace(url("data:image/svg+xml;charse
 
 // Sidebar
 
-$sidebar-width:                       200px !default;
+$sidebar-width:                       272px !default;
 $sidebar-padding:                     0 !default;
 $sidebar-minimized-width:             50px !default;
 $sidebar-minimized-height:            $sidebar-minimized-width !default;
 $sidebar-compact-width:               150px !default;
 $sidebar-compact-height:              $sidebar-compact-width !default;
 $sidebar-color:                       #fff !default;
-$sidebar-bg:                          $gray-800 !default;
+$sidebar-bg:                        #fff; // $gray-800 !default;
 $sidebar-borders:                     none !default;
 $mobile-sidebar-width:                220px !default;
 

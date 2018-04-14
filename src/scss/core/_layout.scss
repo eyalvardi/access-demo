@@ -137,6 +137,7 @@ app-root {
   .sidebar-minimized {
     .sidebar {
       flex: 0 0 $sidebar-minimized-width;
+
     }
 
     &.sidebar-hidden {

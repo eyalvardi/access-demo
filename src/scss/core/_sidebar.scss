@@ -126,14 +126,21 @@
       border-radius: $border-radius;
     }
     color:#000;
+    &.active {
+      i {
+        opacity: 1;
+        color:#fff!important;
+      }
+    }
 
-    i {
+    i{
       display: inline-block;
       width: 20px;
       margin: 0 ($sidebar-nav-link-padding-x / 2) 0 0;
       font-size: 14px;
       color: $sidebar-nav-link-icon-color;
       text-align: center;
+      opacity: 0;
     }
 
     .badge {
@@ -163,6 +170,7 @@
 
       i {
         color: $sidebar-nav-link-hover-icon-color;
+        opacity: 1!important;
       }
 
       &.nav-dropdown-toggle::before {
@@ -266,6 +274,7 @@
   }
 
   .sidebar-minimizer {
+    display: none;
     position: relative;
     flex: 0 0 $sidebar-minimizer-height;
     background-color: $sidebar-minimizer-bg;

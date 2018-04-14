@@ -109,7 +109,28 @@
 }
 
 .navbar-divider {
-  background-color: rgba(0,0,0,.075);
+  background-color: rgba(0, 0, 0, .075);
+}
+
+.navbar-menu-top {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex: 1 0 0;
+  align-self: normal;
+  li {
+    display: flex;
+    cursor: pointer;
+    padding:.75rem 1rem;
+    &:hover, &.selected {
+      background-color: #b0e0e6;
+    }
+    span {
+      display: flex;
+      align-self: center;
+    }
+  }
 }
 
 @include media-breakpoint-up(lg) {
