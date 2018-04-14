@@ -18,7 +18,7 @@ export const navigation = [
     }
   },
   {
-    name: 'Dashboard2',
+    name: 'Quotation Request Maintenance',
     url: '/dashboard2',
     icon: 'icon-speedometer',
     badge: {
@@ -27,7 +27,7 @@ export const navigation = [
     }
   },
   {
-    name: 'Dashboard3',
+    name: 'Quote Maintenance',
     url: '/dashboard3',
     icon: 'icon-speedometer',
     badge: {
@@ -36,7 +36,7 @@ export const navigation = [
     }
   },
   {
-    name: 'Dashboard4',
+    name: 'Sales Order Menu',
     url: '/dashboard4',
     icon: 'icon-speedometer',
     badge: {
@@ -45,7 +45,7 @@ export const navigation = [
     }
   },
   {
-    name: 'Dashboard5',
+    name: 'Delivery Menu',
     url: '/dashboard5',
     icon: 'icon-speedometer',
     badge: {
@@ -54,7 +54,7 @@ export const navigation = [
     }
   },
   {
-    name: 'Dashboard6',
+    name: 'Release Notes',
     url: '/dashboard6',
     icon: 'icon-speedometer',
     badge: {
@@ -63,7 +63,52 @@ export const navigation = [
     }
   },
   {
-    name: 'Dashboard7',
+    name: 'Sales Invoice Menu',
+    url: '/dashboard7',
+    icon: 'icon-speedometer',
+    badge: {
+      variant: 'info',
+      text: 'NEW'
+    }
+  },
+  {
+    name: 'Customer After-Sales Menu',
+    url: '/dashboard7',
+    icon: 'icon-speedometer',
+    badge: {
+      variant: 'info',
+      text: 'NEW'
+    }
+  },
+  {
+    name: 'Credit Note Menu',
+    url: '/dashboard7',
+    icon: 'icon-speedometer',
+    badge: {
+      variant: 'info',
+      text: 'NEW'
+    }
+  },
+  {
+    name: 'SO Test report',
+    url: '/dashboard7',
+    icon: 'icon-speedometer',
+    badge: {
+      variant: 'info',
+      text: 'NEW'
+    }
+  },
+  {
+    name: 'Test',
+    url: '/dashboard7',
+    icon: 'icon-speedometer',
+    badge: {
+      variant: 'info',
+      text: 'NEW'
+    }
+  },
+  {
+    name: 'Test menu',
     url: '/dashboard7',
     icon: 'icon-speedometer',
     badge: {
