@@ -1,6 +1,6 @@
 export const navigation = [
   {
-    name: 'Dashboard',
+    name: 'Prospect Maintenance',
     url: '/dashboard',
     icon: 'icon-speedometer',
     badge: {
@@ -9,7 +9,7 @@ export const navigation = [
     }
   },
   {
-    name: 'Customers',
+    name: 'Customers Maintenance',
     url: '/customers',
     icon: 'icon-speedometer',
     badge: {
