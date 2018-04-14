@@ -140,12 +140,12 @@
       font-size: 14px;
       color: $sidebar-nav-link-icon-color;
       text-align: center;
-      &.icon-speedometer:before{
-          content: "\f0da";
-          font: normal normal normal 14px/1 FontAwesome;
-          font-size: 1.25rem;
-      }
       opacity: 0;
+      &.icon-speedometer:before{
+        content: "\f0da";
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: 1.25rem;
+      }
     }
 
     .badge {
